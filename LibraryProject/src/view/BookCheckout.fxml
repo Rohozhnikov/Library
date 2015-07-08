@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="650.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.BookChteckoutController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <SplitPane dividerPositions="0.4567901234567901" focusTraversable="true" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+          <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+              <children>
+                <Pane prefHeight="499.0" prefWidth="259.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-0.23" AnchorPane.rightAnchor="0.23" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <TextField id="memberIDSearchTextField" layoutX="13.0" layoutY="49.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="17.98046875" prefWidth="122.5390625" />
+                    <TextField id="memberIDSearchTextField" layoutX="14.0" layoutY="146.0" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="122.5390625" />
+                    <Button layoutX="169.0" layoutY="48.0" mnemonicParsing="false" prefWidth="90.0" text="Search" />
+                    <Label layoutX="15.0" layoutY="19.0" styleClass="label-bright" text="Member ID" />
+                    <Label layoutX="16.0" layoutY="123.0" styleClass="column-header, label-bright" text="ISBN" />
+                    <Label layoutX="12.0" layoutY="468.0" styleClass="label-bright" text="Label" />
+                    <Separator layoutX="13.0" layoutY="86.0" prefWidth="275.5390625" />
+                    <TextField layoutX="158.0" layoutY="146.0" prefWidth="122.5390625" />
+                    <TextField layoutX="159.0" layoutY="207.0" prefWidth="122.5390625" />
+                    <Label layoutX="157.0" layoutY="123.0" text="Title" />
+                    <Label layoutX="159.0" layoutY="181.0" text="Issue number" />
+                    <Separator layoutX="143.0" layoutY="96.0" orientation="VERTICAL" prefHeight="298.0" />
+                    <Label layoutX="15.0" layoutY="97.0" styleClass="column-header, label-bright" text="Book:" />
+                    <Label layoutX="158.0" layoutY="95.0" text="Periodical:" />
+                  </children>
+                </Pane>
+              </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+              <children>
+                <Label layoutX="12.0" layoutY="48.0" styleClass="label-header" text="Details:" />
+                <GridPane alignment="TOP_RIGHT" prefHeight="270.9999000000025" prefWidth="307.9998779296875" AnchorPane.leftAnchor="17.5" AnchorPane.rightAnchor="10.5" AnchorPane.topAnchor="114.0">
+                  <children>
+                    <Label contentDisplay="RIGHT" text="Available" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                    <Label id="cityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <Label id="streetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label id="firstNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label id="firstNameLabel" contentDisplay="RIGHT" text="ISBN" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                    <Label id="credentialsLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Label id="credentialsLabel" contentDisplay="RIGHT" text="Title" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+                    <Label id="lastNameLabel" contentDisplay="RIGHT" text="Author" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                    <Label id="stateLabel" contentDisplay="RIGHT" text="Max checkout" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="156.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="156.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+                <Button layoutX="226.0" layoutY="46.0" mnemonicParsing="false" prefWidth="90.0" text="Checkout" />
+              </children>
+            </AnchorPane>
+          </items>
+        </SplitPane>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

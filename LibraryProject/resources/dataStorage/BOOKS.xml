@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<books>
+    <book>
+        <copy>
+            <copyID>ce34ef91-4f68-46e9-acf9-2ae51507d744</copyID>
+        </copy>
+        <copy>
+            <copyID>80446e49-7110-4acc-be35-b958801fe97b</copyID>
+        </copy>
+        <copy>
+            <copyID>dfb012c3-09fa-4030-bf59-fe729691700c</copyID>
+        </copy>
+        <dateDue>2015-07-07</dateDue>
+        <maxCheckoutLength>21</maxCheckoutLength>
+        <publicationID>6b542adf-cd56-4178-a80d-ddfdc637bd23</publicationID>
+        <title>The Big Fish</title>
+        <authors>
+            <address>
+                <city>Fairfield</city>
+                <state>IA</state>
+                <street>101 S. Main</street>
+                <zip>52556</zip>
+            </address>
+            <firstName>Joe</firstName>
+            <lastName>Thomas</lastName>
+            <phone>641-445-2123</phone>
+            <credential>A happy man is he.</credential>
+        </authors>
+        <authors>
+            <address>
+                <city>Fairfield</city>
+                <state>IA</state>
+                <street>101 S. Main</street>
+                <zip>52556</zip>
+            </address>
+            <firstName>Sandra</firstName>
+            <lastName>Thomas</lastName>
+            <phone>641-445-2123</phone>
+            <credential>A happy wife is she.</credential>
+        </authors>
+        <available>true</available>
+        <ISBN>23-11451</ISBN>
+    </book>
+    <book>
+        <copy>
+            <copyID>2053aaac-8dd6-44a4-bf09-5670bf0df708</copyID>
+        </copy>
+        <dateDue>2015-07-07</dateDue>
+        <maxCheckoutLength>7</maxCheckoutLength>
+        <publicationID>3bdd00f2-e6f0-4077-8a4c-7f1d95b1a7d4</publicationID>
+        <title>Antartica</title>
+        <authors>
+            <address>
+                <city>Georgetown</city>
+                <state>MI</state>
+                <street>51 S. George</street>
+                <zip>65434</zip>
+            </address>
+            <firstName>Nirmal</firstName>
+            <lastName>Pugh</lastName>
+            <phone>641-919-3223</phone>
+            <credential>Thinker of thoughts.</credential>
+        </authors>
+        <available>true</available>
+        <ISBN>28-12331</ISBN>
+    </book>
+    <book>
+        <copy>
+            <copyID>25479d36-cb97-48ad-8f91-1014833cd461</copyID>
+        </copy>
+        <copy>
+            <copyID>88c32d54-c05c-4b26-881e-32d60a186bd4</copyID>
+        </copy>
+        <copy>
+            <copyID>3506b1d3-1c36-4059-b9fa-7af5b7723693</copyID>
+        </copy>
+        <dateDue>2015-07-07</dateDue>
+        <maxCheckoutLength>21</maxCheckoutLength>
+        <publicationID>262c1105-37a0-4670-852f-30011064dbce</publicationID>
+        <title>Thinking Java</title>
+        <authors>
+            <address>
+                <city>Seville</city>
+                <state>Georgia</state>
+                <street>23 Headley Ave</street>
+                <zip>41234</zip>
+            </address>
+            <firstName>Andrew</firstName>
+            <lastName>Cleveland</lastName>
+            <phone>976-445-2232</phone>
+            <credential>Author of childrens' books.</credential>
+        </authors>
+        <available>true</available>
+        <ISBN>99-22223</ISBN>
+    </book>
+    <book>
+        <copy>
+            <copyID>eb1ba137-5e1b-4d26-a08f-5a052579edc7</copyID>
+        </copy>
+        <dateDue>2015-07-07</dateDue>
+        <maxCheckoutLength>7</maxCheckoutLength>
+        <publicationID>a8481409-fb76-4648-b185-8fb4e1297f55</publicationID>
+        <title>Jimmy's First Day of School</title>
+        <authors>
+            <address>
+                <city>Baton Rouge</city>
+                <state>LA</state>
+                <street>1 N. Baton</street>
+                <zip>33556</zip>
+            </address>
+            <firstName>Sarah</firstName>
+            <lastName>Connor</lastName>
+            <phone>123-422-2663</phone>
+            <credential>Known for her clever style.</credential>
+        </authors>
+        <available>true</available>
+        <ISBN>48-56882</ISBN>
+    </book>
+</books>

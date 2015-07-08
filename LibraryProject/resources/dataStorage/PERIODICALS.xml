@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<periodicals>
+    <periodical>
+        <copy>
+            <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
+        </copy>
+        <copy>
+            <copyID>1f88ad01-7401-4b16-8f15-c7ecfeacb9e5</copyID>
+        </copy>
+        <dateDue>2015-07-07</dateDue>
+        <maxCheckoutLength>3</maxCheckoutLength>
+        <publicationID>22e80c04-f655-4fb0-9e28-58080b491a54</publicationID>
+        <title>Journal of Skydiving</title>
+    </periodical>
+    <periodical>
+        <copy>
+            <copyID>1e8fbccf-f548-4bd4-9ff2-dac8c1d76d41</copyID>
+        </copy>
+        <copy>
+            <copyID>ab605646-f6b7-4b0c-b5a9-6eacece5a2b4</copyID>
+        </copy>
+        <dateDue>2015-07-07</dateDue>
+        <maxCheckoutLength>7</maxCheckoutLength>
+        <publicationID>b0d94ea6-eccf-4e63-8ba2-825439620fab</publicationID>
+        <title>Life Magazine</title>
+    </periodical>
+    <periodical>
+        <copy>
+            <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
+        </copy>
+        <copy>
+            <copyID>a67fd939-a50d-462b-b11f-c8d7926b6882</copyID>
+        </copy>
+        <dateDue>2015-07-07</dateDue>
+        <maxCheckoutLength>3</maxCheckoutLength>
+        <publicationID>0913424a-96e1-4d39-8d79-078b5c0fad6a</publicationID>
+        <title>Journal of Symbolic Logic</title>
+    </periodical>
+</periodicals>
