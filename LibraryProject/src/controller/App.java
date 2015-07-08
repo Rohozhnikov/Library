@@ -78,6 +78,7 @@ public class App extends Application {
 //		if (file != null) {
 //			loadPersonDataFromFile(file);
 //		}
+		
 	}
 
 	public void showLibraryMemberOverwiev() {
