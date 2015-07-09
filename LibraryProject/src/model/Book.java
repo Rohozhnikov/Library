@@ -25,6 +25,13 @@ public class Book extends Publication {
 		available = new SimpleBooleanProperty(true);
 	}
 
+	public StringProperty ISBNProperty(){
+		return ISBN;
+	}
+	public BooleanProperty availableProperty(){
+		return available;
+	}
+
 	public List<Author> getAuthors() {
 		return authors;
 	}

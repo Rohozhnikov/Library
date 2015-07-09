@@ -36,6 +36,18 @@ public class Publication {
 		dateDue = new SimpleObjectProperty<LocalDate>(LocalDate.now());
 	}
 
+	public StringProperty titleProperty(){
+		return title;
+	}
+	public StringProperty publicationIDProperty(){
+		return publicationID;
+	}
+	public IntegerProperty maxCheckoutLengthProperty(){
+		return maxCheckoutLength;
+	}
+	public ObjectProperty<LocalDate> dateDueProperty(){
+		return dateDue;
+	}
 	public String getTitle() {
 		return title.get();
 	}

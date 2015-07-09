@@ -113,10 +113,12 @@ public class MenuLayoutController {
 
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MenuLayoutController.class
-					.getResource("/view/BookCheckout.fxml"));
-			AnchorPane BookChteckoutController = loader.load();
+					.getResource("/view/PublicationOverview.fxml"));
+			AnchorPane layout = loader.load();
 
-			rootLayout.setCenter(BookChteckoutController);
+			rootLayout.setCenter(layout);
+			BookChteckoutController bookChteckoutController =loader.getController();
+			bookChteckoutController.setApp(mainApp);
 
 			Stage stage = new Stage();
 			stage.setTitle("Checkout");
