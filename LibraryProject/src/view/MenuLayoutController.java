@@ -117,7 +117,7 @@ public class MenuLayoutController {
 			AnchorPane layout = loader.load();
 
 			rootLayout.setCenter(layout);
-			BookChteckoutController bookChteckoutController =loader.getController();
+			PublicationController bookChteckoutController =loader.getController();
 			bookChteckoutController.setApp(mainApp);
 
 			Stage stage = new Stage();

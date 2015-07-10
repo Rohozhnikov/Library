@@ -7,21 +7,21 @@
             <street>5001 Venice Dr.</street>
             <zip>93736</zip>
         </address>
-        <firstName>Rishisdfsafdsa</firstName>
+        <firstName>Rishi</firstName>
         <lastName>Rogers</lastName>
         <phone>641-223-2211</phone>
         <checkoutRecord>
             <checkoutRecordEntries>
                 <checkoutDate>2011-12-01</checkoutDate>
                 <copy>
-                    <copyID>ce34ef91-4f68-46e9-acf9-2ae51507d744</copyID>
+                    <copyID>4f7b7935-8e32-4ef7-8f41-0038bb029f76</copyID>
                 </copy>
                 <dueDate>2011-12-22</dueDate>
             </checkoutRecordEntries>
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-20</checkoutDate>
                 <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
+                    <copyID>cdb1d3c9-b094-40e0-8a4c-273aedb7ae47</copyID>
                 </copy>
                 <dueDate>2015-06-27</dueDate>
             </checkoutRecordEntries>
@@ -42,14 +42,14 @@
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-27</checkoutDate>
                 <copy>
-                    <copyID>2053aaac-8dd6-44a4-bf09-5670bf0df708</copyID>
+                    <copyID>20ed9550-b364-4d65-98ff-e973c8fed064</copyID>
                 </copy>
                 <dueDate>2015-07-18</dueDate>
             </checkoutRecordEntries>
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-20</checkoutDate>
                 <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
+                    <copyID>cdb1d3c9-b094-40e0-8a4c-273aedb7ae47</copyID>
                 </copy>
                 <dueDate>2015-06-27</dueDate>
             </checkoutRecordEntries>
@@ -70,14 +70,14 @@
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-27</checkoutDate>
                 <copy>
-                    <copyID>25479d36-cb97-48ad-8f91-1014833cd461</copyID>
+                    <copyID>9a0b5c61-d4d9-48b6-bc9a-8719d773dc45</copyID>
                 </copy>
                 <dueDate>2015-07-18</dueDate>
             </checkoutRecordEntries>
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-22</checkoutDate>
                 <copy>
-                    <copyID>1e8fbccf-f548-4bd4-9ff2-dac8c1d76d41</copyID>
+                    <copyID>541f3d46-2249-4da3-b5fa-d3852118b67e</copyID>
                 </copy>
                 <dueDate>2015-06-29</dueDate>
             </checkoutRecordEntries>
@@ -98,397 +98,18 @@
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-20</checkoutDate>
                 <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
+                    <copyID>cdb1d3c9-b094-40e0-8a4c-273aedb7ae47</copyID>
                 </copy>
                 <dueDate>2015-06-27</dueDate>
             </checkoutRecordEntries>
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-22</checkoutDate>
                 <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
+                    <copyID>4ea7d08b-6500-42ed-bbd1-d58268bdcd7e</copyID>
                 </copy>
                 <dueDate>2015-06-25</dueDate>
             </checkoutRecordEntries>
         </checkoutRecord>
         <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>    <member>
-        <address>
-            <city>Mountain View</city>
-            <state>CA</state>
-            <street>501 Central</street>
-            <zip>94707</zip>
-        </address>
-        <firstName>Ricardo</firstName>
-        <lastName>Montalbahn</lastName>
-        <phone>641-472-2871</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-22</checkoutDate>
-                <copy>
-                    <copyID>944e14a1-ddb3-4410-8c8c-8f2d186ae9a7</copyID>
-                </copy>
-                <dueDate>2015-06-25</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1004</memberID>
-    </member>
-	<member>
-        <address>
-            <city>Los Angeles</city>
-            <state>CA</state>
-            <street>5001 Venice Dr.</street>
-            <zip>93736</zip>
-        </address>
-        <firstName>Rishisdfsafdsa</firstName>
-        <lastName>Rogers</lastName>
-        <phone>641-223-2211</phone>
-        <checkoutRecord>
-            <checkoutRecordEntries>
-                <checkoutDate>2011-12-01</checkoutDate>
-                <copy>
-                    <copyID>ce34ef91-4f68-46e9-acf9-2ae51507d744</copyID>
-                </copy>
-                <dueDate>2011-12-22</dueDate>
-            </checkoutRecordEntries>
-            <checkoutRecordEntries>
-                <checkoutDate>2015-06-20</checkoutDate>
-                <copy>
-                    <copyID>0e5c1c48-622f-48c9-b03b-4132735927ff</copyID>
-                </copy>
-                <dueDate>2015-06-27</dueDate>
-            </checkoutRecordEntries>
-        </checkoutRecord>
-        <memberID>1001</memberID>
     </member>
 </members>

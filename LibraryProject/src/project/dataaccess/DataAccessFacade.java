@@ -1,35 +1,30 @@
 package project.dataaccess;
 
 import java.io.File;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.prefs.Preferences;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-
-import controller.App;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-import javafx.util.Pair;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
 import model.Book;
 import model.BookWrapper;
 import model.LibraryMember;
 import model.LibraryMemberWrapper;
 import model.Periodical;
 import model.PeriodicalWrapper;
+import controller.App;
 
 public class DataAccessFacade {
 	private static Stage primaryStage;
 
-	private static HashMap<String, Book> books;
-	private static HashMap<Pair<String, Integer>, Periodical> periodicals;
-	private static HashMap<String, LibraryMember> members;
 	private static ObservableList<LibraryMember> memberData = FXCollections
 			.observableArrayList();
 	private static ObservableList<Periodical> periodicalData = FXCollections
@@ -120,8 +115,10 @@ public class DataAccessFacade {
 	}
 
 	public static ObservableList<Book> readBooks() {
+		if (bookData.size() != 0) {
+			return bookData;
+		}
 		File file = new File("./resources/dataStorage/BOOKS.xml");
-		books = new HashMap<String, Book>();
 		try {
 			JAXBContext context = JAXBContext.newInstance(BookWrapper.class);
 			Unmarshaller unmarshaller = context.createUnmarshaller();
@@ -130,7 +127,7 @@ public class DataAccessFacade {
 
 			bookData.clear();
 			bookData.addAll(wrapper.getBooks());
-//			bookData.forEach(b -> books.put(b.getISBN(), b));
+			// bookData.forEach(b -> books.put(b.getISBN(), b));
 
 		} catch (Exception e) { // catches ANY exception
 			Alert alert = new Alert(AlertType.ERROR);
@@ -144,12 +141,11 @@ public class DataAccessFacade {
 		return bookData;
 	}
 
-	public static HashMap<Pair<String, Integer>, Periodical> readPeriodicalsMap() {
-		if (periodicals != null) {
-			return periodicals;
+	public static ObservableList<Periodical> readPeriodicals() {
+		if (periodicalData.size() != 0) {
+			return periodicalData;
 		}
 		File file = new File("./resources/dataStorage/PERIODICALS.xml");
-		periodicals = new HashMap<Pair<String, Integer>, Periodical>();
 		try {
 			JAXBContext context = JAXBContext
 					.newInstance(PeriodicalWrapper.class);
@@ -160,7 +156,6 @@ public class DataAccessFacade {
 
 			periodicalData.clear();
 			periodicalData.addAll(wrapper.getPeriodicals());
-			periodicalData.forEach(p -> periodicals.put(new Pair<String, Integer>(p.getTitle(), p.getIssueNO()), p));
 
 		} catch (Exception e) { // catches ANY exception
 			Alert alert = new Alert(AlertType.ERROR);
@@ -171,14 +166,14 @@ public class DataAccessFacade {
 
 			alert.showAndWait();
 		}
-		return periodicals;
+		return periodicalData;
 	}
 
-//	public static Map<String, LibraryMember> readMemberMap() {
-		public static ObservableList<LibraryMember> readMemberMap() {
-
+	public static ObservableList<LibraryMember> readMemberMap() {
+		if (memberData.size() != 0) {
+			return memberData;
+		}
 		File file = new File("./resources/dataStorage/MEMBERS.xml");
-		members = new HashMap<String, LibraryMember>();
 		try {
 			JAXBContext context = JAXBContext
 					.newInstance(LibraryMemberWrapper.class);
@@ -189,8 +184,6 @@ public class DataAccessFacade {
 
 			memberData.clear();
 			memberData.addAll(wrapper.getLibraryMembers());
-//			memberData.forEach(libraryMember -> members.put(
-//					libraryMember.getMemberID(), libraryMember));
 		} catch (Exception e) { // catches ANY exception
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");

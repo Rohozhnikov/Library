@@ -17,6 +17,8 @@ public class LibraryMemberOverwievController {
 	@FXML
 	private TableColumn<LibraryMember, String> lastNameColumn;
 	@FXML
+	private TableColumn<LibraryMember, String> FirstNameColumn;
+	@FXML
 	private TableColumn<LibraryMember, String> memberIDColumn;
 
 	@FXML
@@ -47,12 +49,19 @@ public class LibraryMemberOverwievController {
 
 	@FXML
 	private void initialize() {
-		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
-		memberIDColumn.setCellValueFactory(cellData -> cellData.getValue().memberIDProperty());
+		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.lastNameProperty());
+		FirstNameColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.firstNameProperty());
+		memberIDColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.memberIDProperty());
 		showPersonDetails(null);
 
-		memberTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
+		memberTable
+				.getSelectionModel()
+				.selectedItemProperty()
+				.addListener(
+						(observable, oldValue, newValue) -> showPersonDetails(newValue));
 	}
 
 	public void setApp(App app) {
@@ -103,7 +112,8 @@ public class LibraryMemberOverwievController {
 	 */
 	@FXML
 	private void handleEditMember() {
-		LibraryMember selectedPerson = memberTable.getSelectionModel().getSelectedItem();
+		LibraryMember selectedPerson = memberTable.getSelectionModel()
+				.getSelectedItem();
 		if (selectedPerson != null) {
 			boolean okClicked = app.showMemberEditDialog(selectedPerson);
 			if (okClicked) {
@@ -126,8 +136,11 @@ public class LibraryMemberOverwievController {
 	private void searchByID() {
 		if (memberIDSearchTextField.getText().isEmpty()) {
 
-			memberTable.getSelectionModel().selectedItemProperty()
-					.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
+			memberTable
+					.getSelectionModel()
+					.selectedItemProperty()
+					.addListener(
+							(observable, oldValue, newValue) -> showPersonDetails(newValue));
 		} else {
 			String id = memberIDSearchTextField.getText();
 			memberIDSearchTextField.setText("");
@@ -141,8 +154,11 @@ public class LibraryMemberOverwievController {
 			}
 		}
 
-		memberTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
+		memberTable
+				.getSelectionModel()
+				.selectedItemProperty()
+				.addListener(
+						(observable, oldValue, newValue) -> showPersonDetails(newValue));
 	}
 
 }

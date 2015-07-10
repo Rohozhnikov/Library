@@ -17,14 +17,25 @@ public class Periodical extends Publication {
 		addCopy();
 	}
 
+	public IntegerProperty issueNo() {
+		return issueNO;
+	}
+
+	public void setIssueNO(int issueNO) {
+		this.issueNO.set(issueNO);
+	}
+
 	public int getIssueNO() {
 		return issueNO.get();
 	}
 
 	@Override
 	public String toString() {
-		return "Periodical [issueNO=" + issueNO + ", getTitle()=" + getTitle() + ", getCopy()=" + getCopy()
-				+ ", getNextAvailableCopy()=" + getNextAvailableCopy() + ", getPublicationID()=" + getPublicationID()
-				+ ", getMaxCheckoutLength()=" + getMaxCheckoutLength() + "]";
+		return "Periodical [issueNO=" + issueNO + ", getTitle()=" + getTitle()
+				+ ", getCopy()=" + getCopy() + ", getNextAvailableCopy()="
+				+ getNextAvailableCopy() + ", getPublicationID()="
+				+ getPublicationID() + ", getMaxCheckoutLength()="
+				+ getMaxCheckoutLength() + "]";
 	}
+
 }

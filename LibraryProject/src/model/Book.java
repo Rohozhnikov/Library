@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -17,7 +18,8 @@ public class Book extends Publication {
 		this(null, null, 0, new ArrayList<Author>());
 	}
 
-	public Book(String ISBN, String title, int maxCheckoutLength, List<Author> authors) {
+	public Book(String ISBN, String title, int maxCheckoutLength,
+			List<Author> authors) {
 		super(title, maxCheckoutLength);
 		this.ISBN = new SimpleStringProperty(ISBN);
 		this.authors = authors;
@@ -25,11 +27,24 @@ public class Book extends Publication {
 		available = new SimpleBooleanProperty(true);
 	}
 
-	public StringProperty ISBNProperty(){
+	public StringProperty ISBNProperty() {
 		return ISBN;
 	}
-	public BooleanProperty availableProperty(){
+
+	public BooleanProperty availableProperty() {
 		return available;
+	}
+
+	public StringProperty authorsProperty() {
+		return new SimpleStringProperty(getAuthorsInLine());
+	}
+
+	public String getAuthorsInLine() {
+		return authors
+				.stream()
+				.map(author -> author.getFirstName() + " "
+						+ author.getLastName())
+				.collect(Collectors.joining(", "));
 	}
 
 	public List<Author> getAuthors() {
@@ -62,9 +77,11 @@ public class Book extends Publication {
 
 	@Override
 	public String toString() {
-		return "Book [ISBN=" + ISBN + ", available=" + ", authors=" + authors + ", getTitle()=" + getTitle()
-				+ ", getCopy()=" + getCopy() + ", getNextAvailableCopy()=" + getNextAvailableCopy()
-				+ ", getPublicationID()=" + getPublicationID() + ", getMaxCheckoutLength()=" + getMaxCheckoutLength()
+		return "Book [ISBN=" + ISBN + ", available=" + ", authors=" + authors
+				+ ", getTitle()=" + getTitle() + ", getCopy()=" + getCopy()
+				+ ", getNextAvailableCopy()=" + getNextAvailableCopy()
+				+ ", getPublicationID()=" + getPublicationID()
+				+ ", getMaxCheckoutLength()=" + getMaxCheckoutLength()
 				+ ", getDateDue()=" + "]";
 	}
 
