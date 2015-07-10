@@ -35,11 +35,8 @@ public class App extends Application {
 	}
 
 	private BorderPane rootLayout;
-	private ObservableList<LibraryMember> memberData = FXCollections.observableArrayList();
-//	private ObservableList<Author> personData = FXCollections.observableArrayList();
-//	public ObservableList<Author> getPersonData() {
-//		return personData;
-//	}
+	private ObservableList<LibraryMember> memberData = FXCollections
+			.observableArrayList();
 
 	public App() {
 	}
@@ -48,7 +45,8 @@ public class App extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("LIBRARY");
-		this.primaryStage.getIcons().add(new Image("file:resources/images/Closed_Note.png"));
+		this.primaryStage.getIcons().add(
+				new Image("file:resources/images/Closed_Note.png"));
 
 		initRootLayout();
 		showLibraryMemberOverwiev();
@@ -73,18 +71,14 @@ public class App extends Application {
 		}
 
 		memberData = DataAccessFacade.readMemberMap();
-//		// Try to load last opened person file.
-//		File file = getPersonFilePath();
-//		if (file != null) {
-//			loadPersonDataFromFile(file);
-//		}
-		
+
 	}
 
 	public void showLibraryMemberOverwiev() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(App.class.getResource("/view/LibraryMemberOverview.fxml"));
+			loader.setLocation(App.class
+					.getResource("/view/LibraryMemberOverview.fxml"));
 			AnchorPane LibraryMemberOverwiew = loader.load();
 
 			rootLayout.setCenter(LibraryMemberOverwiew);
@@ -98,9 +92,9 @@ public class App extends Application {
 
 	public boolean showMemberEditDialog(LibraryMember member) {
 		try {
-			// Load the fxml file and create a new stage for the popup dialog.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(App.class.getResource("/view/AuthorEditDialog.fxml"));
+			loader.setLocation(App.class
+					.getResource("/view/AuthorEditDialog.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			// Create the dialog Stage.
@@ -136,50 +130,53 @@ public class App extends Application {
 		}
 	}
 
-//	public void setPersonFilePath(File file) {
-//		Preferences prefs = Preferences.userNodeForPackage(App.class);
-//		if (file != null) {
-//			prefs.put("filePath", file.getPath());
-//
-//			// Update the stage title.
-//			primaryStage.setTitle("AddressApp - " + file.getName());
-//		} else {
-//			prefs.remove("filePath");
-//
-//			// Update the stage title.
-//			primaryStage.setTitle("AddressApp");
-//		}
-//	}
+	// public void setPersonFilePath(File file) {
+	// Preferences prefs = Preferences.userNodeForPackage(App.class);
+	// if (file != null) {
+	// prefs.put("filePath", file.getPath());
+	//
+	// // Update the stage title.
+	// primaryStage.setTitle("AddressApp - " + file.getName());
+	// } else {
+	// prefs.remove("filePath");
+	//
+	// // Update the stage title.
+	// primaryStage.setTitle("AddressApp");
+	// }
+	// }
 
-//	public void loadPersonDataFromFile(File file) {
-//		try {
-//			System.out.println("file = " + file);
-//			JAXBContext context = JAXBContext.newInstance(LibraryMemberWrapper.class);
-//			Unmarshaller um = context.createUnmarshaller();
-//
-//			// Reading XML from the file and unmarshalling.
-//			LibraryMemberWrapper wrapper = (LibraryMemberWrapper) um.unmarshal(file);
-//
-//			memberData.clear();
-//			memberData.addAll(wrapper.getLibraryMembers());
-//
-//			// Save the file path to the registry.
-//			setPersonFilePath(file);
-//
-//		} catch (Exception e) { // catches ANY exception
-//			Alert alert = new Alert(AlertType.ERROR);
-//			alert.setTitle("Error");
-//			alert.setHeaderText("Could not load data");
-//			alert.setContentText("Could not load data from file:\n" + file.getPath());
-//
-//			alert.showAndWait();
-//		}
-//	}
+	// public void loadPersonDataFromFile(File file) {
+	// try {
+	// System.out.println("file = " + file);
+	// JAXBContext context =
+	// JAXBContext.newInstance(LibraryMemberWrapper.class);
+	// Unmarshaller um = context.createUnmarshaller();
+	//
+	// // Reading XML from the file and unmarshalling.
+	// LibraryMemberWrapper wrapper = (LibraryMemberWrapper) um.unmarshal(file);
+	//
+	// memberData.clear();
+	// memberData.addAll(wrapper.getLibraryMembers());
+	//
+	// // Save the file path to the registry.
+	// setPersonFilePath(file);
+	//
+	// } catch (Exception e) { // catches ANY exception
+	// Alert alert = new Alert(AlertType.ERROR);
+	// alert.setTitle("Error");
+	// alert.setHeaderText("Could not load data");
+	// alert.setContentText("Could not load data from file:\n" +
+	// file.getPath());
+	//
+	// alert.showAndWait();
+	// }
+	// }
 
 	public void savePersonDataToFile(File file) {
 		try {
 			System.out.println("file = " + file);
-			JAXBContext context = JAXBContext.newInstance(LibraryMemberWrapper.class);
+			JAXBContext context = JAXBContext
+					.newInstance(LibraryMemberWrapper.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
@@ -191,12 +188,13 @@ public class App extends Application {
 			m.marshal(wrapper, file);
 
 			// Save the file path to the registry.
-//			setPersonFilePath(file);
+			// setPersonFilePath(file);
 		} catch (Exception e) { // catches ANY exception
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");
 			alert.setHeaderText("Could not save data");
-			alert.setContentText("Could not save data to file:\n" + file.getPath());
+			alert.setContentText("Could not save data to file:\n"
+					+ file.getPath());
 
 			alert.showAndWait();
 		}

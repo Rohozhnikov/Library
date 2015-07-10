@@ -101,6 +101,11 @@ public class TestData {
 		td.libraryMemberData();
 		td.periodicalData();
 
+		System.out.println(DataAccessFacade.readBooks());
+		System.out.println("==============================");
+		System.out.println(DataAccessFacade.readMemberMap());
+		System.out.println("==============================");
+		System.out.println(DataAccessFacade.readPeriodicals());
 //		DataAccess da = new DataAccessFacade();
 //		System.out.println(da.readMemberMap());
 //		System.out.println(da.readBooksMap());

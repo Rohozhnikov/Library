@@ -50,7 +50,8 @@ public class BookCheckoutController {
 		ISBNLabel.setText(book.getISBN());
 		MaxCheckoutLabel.setText(String.valueOf(book.getMaxCheckoutLength()));
 		availableLabel.setText(String.valueOf(book.getAvailable()));
-		dateDueLabel.setText(DateUtil.format(LocalDate.now().plusDays(book.getMaxCheckoutLength())));
+		LocalDate n = LocalDate.of(2015, 6, 20);
+//		dateDueLabel.setText("sdflsk");
 		authorsLabel.setText(book.authorsInLine());
 		numCopiesLabel.setText(""+book.getCopy().size());
 	}

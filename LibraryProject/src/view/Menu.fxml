@@ -20,10 +20,14 @@
             <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Books">
+        <Menu mnemonicParsing="false" text="Control panel">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#handleCheckout" text="Checkout" />
+            <MenuItem mnemonicParsing="false" text="Welcome page" />
             <MenuItem mnemonicParsing="false" onAction="#handleLibraryMembers" text="Members" />
+            <MenuItem mnemonicParsing="false" onAction="#handleCheckout" text="Checkout" />
+            <MenuItem mnemonicParsing="false" onAction="#Publications" text="Publications" />
+            <MenuItem mnemonicParsing="false" text="Author" />
+            <MenuItem mnemonicParsing="false" text="Expired" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">

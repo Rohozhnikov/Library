@@ -3,7 +3,7 @@
     <book>
         <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>21</maxCheckoutLength>
-        <publicationID>4aef5d4e-b435-4709-9d18-36c4009d97ae</publicationID>
+        <publicationID>2de0c6c0-667d-4d3c-9dc7-9dd4a3b6333c</publicationID>
         <title>The Big Fish</title>
         <authors>
             <address>
@@ -29,13 +29,13 @@
             <phone>641-445-2123</phone>
             <credential>A happy wife is she.</credential>
         </authors>
-        <available>true</available>
+        <available>false</available>
         <ISBN>23-11451</ISBN>
     </book>
     <book>
         <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>7</maxCheckoutLength>
-        <publicationID>c3d5d5d6-7d5f-4435-80cb-1056de317bba</publicationID>
+        <publicationID>e0ec81fb-cbd0-40a5-9f3e-6d8707e992d1</publicationID>
         <title>Antartica</title>
         <authors>
             <address>
@@ -49,13 +49,13 @@
             <phone>641-919-3223</phone>
             <credential>Thinker of thoughts.</credential>
         </authors>
-        <available>true</available>
+        <available>false</available>
         <ISBN>28-12331</ISBN>
     </book>
     <book>
         <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>21</maxCheckoutLength>
-        <publicationID>71d378f8-de66-4f7a-bafe-16c7fc916593</publicationID>
+        <publicationID>3d261929-c0bf-4877-b0fd-4d7b67ead426</publicationID>
         <title>Thinking Java</title>
         <authors>
             <address>
@@ -69,13 +69,13 @@
             <phone>976-445-2232</phone>
             <credential>Author of childrens' books.</credential>
         </authors>
-        <available>true</available>
+        <available>false</available>
         <ISBN>99-22223</ISBN>
     </book>
     <book>
         <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>7</maxCheckoutLength>
-        <publicationID>2cdba088-9632-4284-9792-d00f8b939ee1</publicationID>
+        <publicationID>6cfcf8ec-7930-4b4d-9ad9-93703a33f7cc</publicationID>
         <title>Jimmy's First Day of School</title>
         <authors>
             <address>
@@ -89,7 +89,7 @@
             <phone>123-422-2663</phone>
             <credential>Known for her clever style.</credential>
         </authors>
-        <available>true</available>
+        <available>false</available>
         <ISBN>48-56882</ISBN>
     </book>
 </books>

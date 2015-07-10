@@ -3,7 +3,7 @@
     <periodical>
         <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>3</maxCheckoutLength>
-        <publicationID>bf62a047-4c7b-4657-9554-3a864d8d4601</publicationID>
+        <publicationID>7521bed7-e8b8-4c36-a065-87ca39fbc364</publicationID>
         <title>Journal of Skydiving</title>
         <available>true</available>
         <issueNO>1</issueNO>
@@ -11,7 +11,7 @@
     <periodical>
         <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>7</maxCheckoutLength>
-        <publicationID>96416e42-5a94-4bd6-ab28-00f48442fa3f</publicationID>
+        <publicationID>94c93e0e-8449-41c7-941d-f70eb275a02d</publicationID>
         <title>Life Magazine</title>
         <available>true</available>
         <issueNO>4</issueNO>
@@ -19,7 +19,7 @@
     <periodical>
         <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>3</maxCheckoutLength>
-        <publicationID>171fb546-1e24-40dd-9e7f-a700cbd0d469</publicationID>
+        <publicationID>898a46e3-21ae-4b42-85a5-d0a12eb05166</publicationID>
         <title>Journal of Symbolic Logic</title>
         <available>true</available>
         <issueNO>100</issueNO>

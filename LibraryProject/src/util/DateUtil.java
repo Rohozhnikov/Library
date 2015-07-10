@@ -4,13 +4,18 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Helper functions for handling dates.
+ * 
+ * @author Marco Jakob
+ */
 public class DateUtil {
-	 /** The date pattern that is used for conversion. Change as you wish. */
-    private static final String DATE_PATTERN = "dd.MM.yyyy";
+
+    /** The date pattern that is used for conversion. Change as you wish. */
 
     /** The date formatter. */
     private static final DateTimeFormatter DATE_FORMATTER = 
-            DateTimeFormatter.ofPattern(DATE_PATTERN);
+            DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
     /**
      * Returns the given date as a well formatted String. The above defined 

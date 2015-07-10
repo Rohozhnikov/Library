@@ -23,7 +23,7 @@ import model.Periodical;
 import model.Publication;
 import project.dataaccess.DataAccessFacade;
 
-public class PublicationController {
+public class PublicationsController {
 	@FXML
 	private TableView<Book> bookTable;
 	@FXML
@@ -69,13 +69,12 @@ public class PublicationController {
 	@FXML
 	private Label outputAnswLabel;
 
-	ObservableList<LibraryMember> libraryMembers;
 	ObservableList<Book> books;
 	ObservableList<Periodical> periodicals;
 
 	private App app;
 
-	public PublicationController() {
+	public PublicationsController() {
 	}
 
 	public void setApp(App app) {
@@ -84,7 +83,6 @@ public class PublicationController {
 
 	@FXML
 	private void initialize() {
-		libraryMembers = DataAccessFacade.readMemberMap();
 		books = DataAccessFacade.readBooks();
 		periodicals = DataAccessFacade.readPeriodicals();
 
@@ -108,22 +106,6 @@ public class PublicationController {
 
 	}
 
-	private LibraryMember getMemberByID()  {
-		try{
-		Optional<LibraryMember> enteredMemberID = libraryMembers.stream()
-				.filter(memb -> memb.getMemberID().equals(memberIDextField.getText())).findFirst();
-		return enteredMemberID.get();
-		} catch (Exception e) {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Error");
-			// alert.setHeaderText("ID is wrong");
-			alert.setContentText("Wrong input Id");
-			alert.showAndWait();
-		}
-		return null;
-
-	}
-
 	private Book getBookByISBN() {
 		Optional<Book> enteredBookISBN = books.stream().filter(bk -> bk.getISBN().equals(ISBNTextField.getText()))
 				.findAny();
@@ -139,16 +121,14 @@ public class PublicationController {
 
 	@FXML
 	private void searchChekoutBook() {
-		LibraryMember member;
 		try {
-			member = getMemberByID();
 			if (!ISBNTextField.getText().isEmpty() && titleTextField.getText().isEmpty()
 					&& issueNumberTextField.getText().isEmpty()) {
-				showBookDetails(getBookByISBN(), member);
+				showBookDetails(getBookByISBN(), null);
 
 			} else if (!titleTextField.getText().isEmpty() && !issueNumberTextField.getText().isEmpty()
 					&& ISBNTextField.getText().isEmpty()) {
-				showPeriodicalDetails(getPeriodicalByTitle(), member);
+				showPeriodicalDetails(getPeriodicalByTitle(), null);
 			}
 
 		} catch (Exception e) {

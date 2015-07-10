@@ -3,8 +3,8 @@ package view;
 import java.io.File;
 import java.io.IOException;
 
-import project.dataaccess.DataAccessFacade;
 import controller.App;
+import project.dataaccess.DataAccessFacade;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -160,14 +160,32 @@ public class MenuLayoutController {
 		}
 	}
 
-	// @FXML
-	// public void displayCheckOutWindow() throws IOException {
-	//
-	// FXMLLoader loader = new FXMLLoader();
-	// loader.setLocation(MenuLayoutController.class
-	// .getResource("/view/BookCheckout.fxml"));
-	// AnchorPane BookChteckoutController = loader.load();
-	// rootLayout.setCenter(BookChteckoutController);
-	//
-	// }
+	@FXML
+	private void Publications() {
+		try {
+			FXMLLoader loaderMenu = new FXMLLoader();
+			loaderMenu.setLocation(App.class.getResource("/view/Menu.fxml"));
+			rootLayout = loaderMenu.load();
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MenuLayoutController.class
+					.getResource("/view/Publications.fxml"));
+			AnchorPane layout = loader.load();
+
+			rootLayout.setCenter(layout);
+			PublicationsController bookChteckoutController =loader.getController();
+			bookChteckoutController.setApp(mainApp);
+
+			Stage stage = new Stage();
+			stage.setTitle("Publications");
+			stage.initModality(Modality.WINDOW_MODAL);
+			Scene scene = new Scene(rootLayout);
+			stage.setScene(scene);
+
+			stage.show();
+			new App().setPrimaryStage(stage);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
