@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <books>
     <book>
-        <copy>
-            <copyID>4f7b7935-8e32-4ef7-8f41-0038bb029f76</copyID>
-        </copy>
-        <copy>
-            <copyID>2d9dd92d-979f-4ea8-b0bf-a66ced215195</copyID>
-        </copy>
-        <copy>
-            <copyID>17de4729-1b00-46b5-8a7a-676bffb9e273</copyID>
-        </copy>
-        <dateDue>2015-07-09</dateDue>
+        <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>21</maxCheckoutLength>
-        <publicationID>a6ee94e0-0372-497d-a7f6-dc883c4a605c</publicationID>
+        <publicationID>4aef5d4e-b435-4709-9d18-36c4009d97ae</publicationID>
         <title>The Big Fish</title>
         <authors>
             <address>
@@ -42,12 +33,9 @@
         <ISBN>23-11451</ISBN>
     </book>
     <book>
-        <copy>
-            <copyID>20ed9550-b364-4d65-98ff-e973c8fed064</copyID>
-        </copy>
-        <dateDue>2015-07-09</dateDue>
+        <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>7</maxCheckoutLength>
-        <publicationID>60a48aac-bb74-4062-8941-86075d47afb7</publicationID>
+        <publicationID>c3d5d5d6-7d5f-4435-80cb-1056de317bba</publicationID>
         <title>Antartica</title>
         <authors>
             <address>
@@ -65,18 +53,9 @@
         <ISBN>28-12331</ISBN>
     </book>
     <book>
-        <copy>
-            <copyID>9a0b5c61-d4d9-48b6-bc9a-8719d773dc45</copyID>
-        </copy>
-        <copy>
-            <copyID>8c22138a-712b-427c-9639-c5863735b564</copyID>
-        </copy>
-        <copy>
-            <copyID>e0bb03cb-a54d-4c9c-bc15-3a4cb93476ca</copyID>
-        </copy>
-        <dateDue>2015-07-09</dateDue>
+        <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>21</maxCheckoutLength>
-        <publicationID>5a60a665-ba5c-479f-864f-a4ffcad6b5d3</publicationID>
+        <publicationID>71d378f8-de66-4f7a-bafe-16c7fc916593</publicationID>
         <title>Thinking Java</title>
         <authors>
             <address>
@@ -94,12 +73,9 @@
         <ISBN>99-22223</ISBN>
     </book>
     <book>
-        <copy>
-            <copyID>06a54528-fa4b-4859-bca3-babc1a0d8aeb</copyID>
-        </copy>
-        <dateDue>2015-07-09</dateDue>
+        <dateDue>2015-07-10</dateDue>
         <maxCheckoutLength>7</maxCheckoutLength>
-        <publicationID>e7288fb6-2dd0-407e-9582-fddc96715376</publicationID>
+        <publicationID>2cdba088-9632-4284-9792-d00f8b939ee1</publicationID>
         <title>Jimmy's First Day of School</title>
         <authors>
             <address>

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import javafx.beans.property.IntegerProperty;
@@ -36,18 +37,22 @@ public class Publication {
 		dateDue = new SimpleObjectProperty<LocalDate>(LocalDate.now());
 	}
 
-	public StringProperty titleProperty(){
+	public StringProperty titleProperty() {
 		return title;
 	}
-	public StringProperty publicationIDProperty(){
+
+	public StringProperty publicationIDProperty() {
 		return publicationID;
 	}
-	public IntegerProperty maxCheckoutLengthProperty(){
+
+	public IntegerProperty maxCheckoutLengthProperty() {
 		return maxCheckoutLength;
 	}
-	public ObjectProperty<LocalDate> dateDueProperty(){
+
+	public ObjectProperty<LocalDate> dateDueProperty() {
 		return dateDue;
 	}
+
 	public String getTitle() {
 		return title.get();
 	}
@@ -56,6 +61,7 @@ public class Publication {
 		this.title.set(title);
 	}
 
+	@XmlTransient
 	public List<Copy> getCopy() {
 		return copy;
 	}
@@ -65,11 +71,21 @@ public class Publication {
 	}
 
 	public void addCopy() {
-		copy.add(new Copy());
+		copy.add(new Copy(this));
 	}
 
-	public Copy getNextAvailableCopy() {
-		return copy.get(0);
+	public Copy nextAvailableCopy() {
+		Copy c = new Copy(this);
+		if (copy == null) {
+			return null;
+		} else if (copy.size() == 0) {
+			c = copy.get(0);
+			copy = null;
+		} else if (copy.size() > 1) {
+			copy.remove(copy);
+			c = copy.get(0);
+		}
+		return c;
 	}
 
 	public String getPublicationID() {
@@ -95,6 +111,12 @@ public class Publication {
 
 	public void setDateDue(LocalDate dateDue) {
 		this.dateDue.set(dateDue);
+	}
+
+	@Override
+	public String toString() {
+		return "Publication [publicationID=" + publicationID + ", title=" + title + ", copy=" + copy
+				+ ", maxCheckoutLength=" + maxCheckoutLength + ", dateDue=" + dateDue + "]\n";
 	}
 
 }

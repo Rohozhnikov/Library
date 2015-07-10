@@ -1,6 +1,9 @@
 package view;
 
+import java.time.LocalDate;
+
 import controller.App;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -9,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import model.CheckoutRecordEntry;
 import model.LibraryMember;
 
 public class LibraryMemberOverwievController {
@@ -20,6 +24,15 @@ public class LibraryMemberOverwievController {
 	private TableColumn<LibraryMember, String> FirstNameColumn;
 	@FXML
 	private TableColumn<LibraryMember, String> memberIDColumn;
+
+	@FXML
+	private TableView<CheckoutRecordEntry> checkoutRecordTable;
+	@FXML
+	private TableColumn<CheckoutRecordEntry, String> copyColumn;
+	@FXML
+	private TableColumn<CheckoutRecordEntry, LocalDate> CheckoutDateColumn;
+	@FXML
+	private TableColumn<CheckoutRecordEntry, LocalDate> DueDateColumn;
 
 	@FXML
 	private Label memberIDLabel;
@@ -49,19 +62,13 @@ public class LibraryMemberOverwievController {
 
 	@FXML
 	private void initialize() {
-		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue()
-				.lastNameProperty());
-		FirstNameColumn.setCellValueFactory(cellData -> cellData.getValue()
-				.firstNameProperty());
-		memberIDColumn.setCellValueFactory(cellData -> cellData.getValue()
-				.memberIDProperty());
+		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+		FirstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+		memberIDColumn.setCellValueFactory(cellData -> cellData.getValue().memberIDProperty());
 		showPersonDetails(null);
 
-		memberTable
-				.getSelectionModel()
-				.selectedItemProperty()
-				.addListener(
-						(observable, oldValue, newValue) -> showPersonDetails(newValue));
+		memberTable.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
 	}
 
 	public void setApp(App app) {
@@ -79,7 +86,15 @@ public class LibraryMemberOverwievController {
 			zipLabel.setText(String.valueOf(member.getAddress().getZip()));
 			phoneLabel.setText(member.getPhone());
 			memberIDLabel.setText(String.valueOf(member.getMemberID()));
+
+			checkoutRecordTable
+					.setItems(FXCollections.observableList(member.getCheckoutRecord().getCheckoutRecordEntries()));
+			copyColumn.setCellValueFactory(cellData -> cellData.getValue().getCopy().getPublication().titleProperty());
+			CheckoutDateColumn.setCellValueFactory(cellData -> cellData.getValue().checkoutDate());
+			DueDateColumn.setCellValueFactory(cellData -> cellData.getValue().dueDate());
 		} else {
+			checkoutRecordTable.setItems(null);
+
 			firstNameLabel.setText("");
 			lastNameLabel.setText("");
 			streetLabel.setText("");
@@ -112,8 +127,7 @@ public class LibraryMemberOverwievController {
 	 */
 	@FXML
 	private void handleEditMember() {
-		LibraryMember selectedPerson = memberTable.getSelectionModel()
-				.getSelectedItem();
+		LibraryMember selectedPerson = memberTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
 			boolean okClicked = app.showMemberEditDialog(selectedPerson);
 			if (okClicked) {
@@ -136,11 +150,8 @@ public class LibraryMemberOverwievController {
 	private void searchByID() {
 		if (memberIDSearchTextField.getText().isEmpty()) {
 
-			memberTable
-					.getSelectionModel()
-					.selectedItemProperty()
-					.addListener(
-							(observable, oldValue, newValue) -> showPersonDetails(newValue));
+			memberTable.getSelectionModel().selectedItemProperty()
+					.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
 		} else {
 			String id = memberIDSearchTextField.getText();
 			memberIDSearchTextField.setText("");
@@ -154,11 +165,8 @@ public class LibraryMemberOverwievController {
 			}
 		}
 
-		memberTable
-				.getSelectionModel()
-				.selectedItemProperty()
-				.addListener(
-						(observable, oldValue, newValue) -> showPersonDetails(newValue));
+		memberTable.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
 	}
 
 }

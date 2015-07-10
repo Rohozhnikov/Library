@@ -44,6 +44,7 @@ public class DataAccessFacade {
 			m.marshal(wrapper, file);
 
 		} catch (Exception e) { // catches ANY exception
+			e.printStackTrace();
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");
 			alert.setHeaderText("Could not save data");
@@ -66,6 +67,7 @@ public class DataAccessFacade {
 			wrapper.setPeriodicals(periodicals);
 			m.marshal(wrapper, file);
 		} catch (Exception e) { // catches ANY exception
+			e.printStackTrace();
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");
 			alert.setHeaderText("Could not save data");

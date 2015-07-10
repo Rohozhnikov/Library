@@ -15,7 +15,7 @@ public class CheckoutRecordEntry {
 	private Copy copy;
 
 	public CheckoutRecordEntry() {
-		this(new Copy(), null, null);
+		this(new Copy(null), null, null);
 	}
 
 	public CheckoutRecordEntry(Copy copy, LocalDate checkoutDate,
@@ -25,12 +25,14 @@ public class CheckoutRecordEntry {
 		this.copy = copy;
 	}
 
-	@Override
-	public String toString() {
-		return "CheckoutRecordEntry [checkoutDate=" + checkoutDate
-				+ ", dueDate=" + dueDate + ", copy=" + "]";
+	public ObjectProperty<LocalDate> dueDate(){
+		return dueDate;
 	}
-
+	
+	public ObjectProperty<LocalDate> checkoutDate(){
+		return checkoutDate;
+	}
+	
 	@XmlJavaTypeAdapter(LocalDateAdapter.class)
 	public LocalDate getCheckoutDate() {
 		return checkoutDate.get();
@@ -55,5 +57,10 @@ public class CheckoutRecordEntry {
 
 	public void setCopy(Copy copy) {
 		this.copy = copy;
+	}
+
+	@Override
+	public String toString() {
+		return "CheckoutRecordEntry [checkoutDate=" + checkoutDate + ", dueDate=" + dueDate + ", copy=" + "]";
 	}
 }

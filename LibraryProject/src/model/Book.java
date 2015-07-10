@@ -18,8 +18,7 @@ public class Book extends Publication {
 		this(null, null, 0, new ArrayList<Author>());
 	}
 
-	public Book(String ISBN, String title, int maxCheckoutLength,
-			List<Author> authors) {
+	public Book(String ISBN, String title, int maxCheckoutLength, List<Author> authors) {
 		super(title, maxCheckoutLength);
 		this.ISBN = new SimpleStringProperty(ISBN);
 		this.authors = authors;
@@ -36,14 +35,11 @@ public class Book extends Publication {
 	}
 
 	public StringProperty authorsProperty() {
-		return new SimpleStringProperty(getAuthorsInLine());
+		return new SimpleStringProperty(authorsInLine());
 	}
 
-	public String getAuthorsInLine() {
-		return authors
-				.stream()
-				.map(author -> author.getFirstName() + " "
-						+ author.getLastName())
+	public String authorsInLine() {
+		return authors.stream().map(author -> author.getFirstName() + " " + author.getLastName())
 				.collect(Collectors.joining(", "));
 	}
 
@@ -71,18 +67,21 @@ public class Book extends Publication {
 		this.available.set(available);
 	}
 
-	public void isAvailable(boolean b) {
-		available.set(b);
+	public boolean isAvailable() {
+		if (getCopy() != null) {
+			available.set(false);
+			return false;
+		}
+		available.set(true);
+		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Book [ISBN=" + ISBN + ", available=" + ", authors=" + authors
-				+ ", getTitle()=" + getTitle() + ", getCopy()=" + getCopy()
-				+ ", getNextAvailableCopy()=" + getNextAvailableCopy()
-				+ ", getPublicationID()=" + getPublicationID()
-				+ ", getMaxCheckoutLength()=" + getMaxCheckoutLength()
-				+ ", getDateDue()=" + "]";
+		return "\nBook [ISBN=" + ISBN + ", available=" + ", authors=" + authors + ", getTitle()=" + getTitle()
+				+ ", getCopy()=" + getCopy() + ", getNextAvailableCopy()=" + nextAvailableCopy()
+				+ ", getPublicationID()=" + getPublicationID() + ", getMaxCheckoutLength()=" + getMaxCheckoutLength()
+				+ ", getDateDue()=" + getDateDue() + "]\n";
 	}
 
 }

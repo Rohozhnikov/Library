@@ -6,25 +6,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.PeriodicalCheckoutController">
+<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.NewPeriodicalController">
   <!-- TODO Add Nodes -->
   <children>
     <Pane prefHeight="350.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <Button layoutX="295.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleCancel" prefWidth="91.0" text="Cancel" />
-        <Button defaultButton="true" layoutX="191.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleCheckout" prefWidth="91.0" text="CHECKOUT" />
-        <GridPane alignment="TOP_RIGHT" layoutX="41.0" layoutY="101.0" prefHeight="166.99990000000253" prefWidth="321.0">
+        <Button defaultButton="true" layoutX="191.0" layoutY="14.0" mnemonicParsing="false" onAction="#newPeriodical" prefWidth="91.0" text="ADD" />
+        <GridPane alignment="TOP_RIGHT" layoutX="16.0" layoutY="101.0" prefHeight="166.99990000000253" prefWidth="372.0">
           <children>
             <Label contentDisplay="RIGHT" text="Title" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <Label contentDisplay="RIGHT" text="Max checkout" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label fx:id="TitleLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="MaxCheckoutLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label id="availableLabel" fx:id="dateDueLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
             <Label contentDisplay="RIGHT" text="Issue No" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
-            <Label id="ISBNLabel" fx:id="issueNOLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
-            <Label text="Due date" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Label text="copies" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Label fx:id="numCopiesLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Label text="copies" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <TextField fx:id="issueNOLabel" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="TitleLabel" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="MaxCheckoutLabel" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="numCopiesLabel" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
           </children>
           <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="156.0" />
@@ -35,11 +33,9 @@
             <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
           </rowConstraints>
         </GridPane>
         <Separator layoutX="16.0" layoutY="65.0" prefWidth="372.0" />
-        <Button layoutX="296.0" layoutY="305.0" mnemonicParsing="false" onAction="#addCopy" text="Add Copy" />
       </children>
     </Pane>
   </children>

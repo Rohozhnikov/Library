@@ -62,21 +62,21 @@ public class TestData {
 	// dueDate)
 	List<CheckoutRecordEntry> allEntries = new ArrayList<CheckoutRecordEntry>() {
 		{
-			add(new CheckoutRecordEntry(allBooks.get(0).getNextAvailableCopy(), LocalDate.of(2011, 12, 1),
+			add(new CheckoutRecordEntry(allBooks.get(0).nextAvailableCopy(), LocalDate.of(2011, 12, 1),
 					LocalDate.of(2011, 12, 22)));
-			add(new CheckoutRecordEntry(allBooks.get(0).getNextAvailableCopy(), LocalDate.of(2015, 6, 22),
+			add(new CheckoutRecordEntry(allBooks.get(0).nextAvailableCopy(), LocalDate.of(2015, 6, 22),
 					LocalDate.of(2015, 7, 13)));
-			add(new CheckoutRecordEntry(allBooks.get(1).getNextAvailableCopy(), LocalDate.of(2015, 6, 27),
+			add(new CheckoutRecordEntry(allBooks.get(1).nextAvailableCopy(), LocalDate.of(2015, 6, 27),
 					LocalDate.of(2015, 7, 18)));
-			add(new CheckoutRecordEntry(allBooks.get(2).getNextAvailableCopy(), LocalDate.of(2015, 6, 27),
+			add(new CheckoutRecordEntry(allBooks.get(2).nextAvailableCopy(), LocalDate.of(2015, 6, 27),
 					LocalDate.of(2015, 7, 18)));
-			add(new CheckoutRecordEntry(allPeriodicals.get(0).getNextAvailableCopy(), LocalDate.of(2015, 6, 20),
+			add(new CheckoutRecordEntry(allPeriodicals.get(0).nextAvailableCopy(), LocalDate.of(2015, 6, 20),
 					LocalDate.of(2015, 6, 27)));
-			add(new CheckoutRecordEntry(allPeriodicals.get(0).getNextAvailableCopy(), LocalDate.of(2015, 6, 20),
+			add(new CheckoutRecordEntry(allPeriodicals.get(0).nextAvailableCopy(), LocalDate.of(2015, 6, 20),
 					LocalDate.of(2015, 6, 27)));
-			add(new CheckoutRecordEntry(allPeriodicals.get(1).getNextAvailableCopy(), LocalDate.of(2015, 6, 22),
+			add(new CheckoutRecordEntry(allPeriodicals.get(1).nextAvailableCopy(), LocalDate.of(2015, 6, 22),
 					LocalDate.of(2015, 6, 29)));
-			add(new CheckoutRecordEntry(allPeriodicals.get(2).getNextAvailableCopy(), LocalDate.of(2015, 6, 22),
+			add(new CheckoutRecordEntry(allPeriodicals.get(2).nextAvailableCopy(), LocalDate.of(2015, 6, 22),
 					LocalDate.of(2015, 6, 25)));
 
 		}

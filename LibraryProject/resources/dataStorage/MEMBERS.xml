@@ -14,14 +14,26 @@
             <checkoutRecordEntries>
                 <checkoutDate>2011-12-01</checkoutDate>
                 <copy>
-                    <copyID>4f7b7935-8e32-4ef7-8f41-0038bb029f76</copyID>
+                    <copyID>2935b623-d33e-4dd9-9625-956fae6ffdb0</copyID>
+                    <publication>
+                        <dateDue>2015-07-10</dateDue>
+                        <maxCheckoutLength>21</maxCheckoutLength>
+                        <publicationID>4aef5d4e-b435-4709-9d18-36c4009d97ae</publicationID>
+                        <title>The Big Fish</title>
+                    </publication>
                 </copy>
                 <dueDate>2011-12-22</dueDate>
             </checkoutRecordEntries>
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-20</checkoutDate>
                 <copy>
-                    <copyID>cdb1d3c9-b094-40e0-8a4c-273aedb7ae47</copyID>
+                    <copyID>fabc0821-a7d3-46f0-9bfa-fef8c3c6821d</copyID>
+                    <publication>
+                        <dateDue>2015-07-10</dateDue>
+                        <maxCheckoutLength>3</maxCheckoutLength>
+                        <publicationID>bf62a047-4c7b-4657-9554-3a864d8d4601</publicationID>
+                        <title>Journal of Skydiving</title>
+                    </publication>
                 </copy>
                 <dueDate>2015-06-27</dueDate>
             </checkoutRecordEntries>
@@ -42,14 +54,26 @@
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-27</checkoutDate>
                 <copy>
-                    <copyID>20ed9550-b364-4d65-98ff-e973c8fed064</copyID>
+                    <copyID>c7528b9f-d0fd-4a06-8aab-f9aa4c838f78</copyID>
+                    <publication>
+                        <dateDue>2015-07-10</dateDue>
+                        <maxCheckoutLength>7</maxCheckoutLength>
+                        <publicationID>c3d5d5d6-7d5f-4435-80cb-1056de317bba</publicationID>
+                        <title>Antartica</title>
+                    </publication>
                 </copy>
                 <dueDate>2015-07-18</dueDate>
             </checkoutRecordEntries>
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-20</checkoutDate>
                 <copy>
-                    <copyID>cdb1d3c9-b094-40e0-8a4c-273aedb7ae47</copyID>
+                    <copyID>fabc0821-a7d3-46f0-9bfa-fef8c3c6821d</copyID>
+                    <publication>
+                        <dateDue>2015-07-10</dateDue>
+                        <maxCheckoutLength>3</maxCheckoutLength>
+                        <publicationID>bf62a047-4c7b-4657-9554-3a864d8d4601</publicationID>
+                        <title>Journal of Skydiving</title>
+                    </publication>
                 </copy>
                 <dueDate>2015-06-27</dueDate>
             </checkoutRecordEntries>
@@ -70,14 +94,26 @@
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-27</checkoutDate>
                 <copy>
-                    <copyID>9a0b5c61-d4d9-48b6-bc9a-8719d773dc45</copyID>
+                    <copyID>40c77ee4-b20b-435a-aa18-18c8d4aadcfc</copyID>
+                    <publication>
+                        <dateDue>2015-07-10</dateDue>
+                        <maxCheckoutLength>21</maxCheckoutLength>
+                        <publicationID>71d378f8-de66-4f7a-bafe-16c7fc916593</publicationID>
+                        <title>Thinking Java</title>
+                    </publication>
                 </copy>
                 <dueDate>2015-07-18</dueDate>
             </checkoutRecordEntries>
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-22</checkoutDate>
                 <copy>
-                    <copyID>541f3d46-2249-4da3-b5fa-d3852118b67e</copyID>
+                    <copyID>a197a72b-f7a7-45c2-8bf2-0a1cba66023b</copyID>
+                    <publication>
+                        <dateDue>2015-07-10</dateDue>
+                        <maxCheckoutLength>7</maxCheckoutLength>
+                        <publicationID>96416e42-5a94-4bd6-ab28-00f48442fa3f</publicationID>
+                        <title>Life Magazine</title>
+                    </publication>
                 </copy>
                 <dueDate>2015-06-29</dueDate>
             </checkoutRecordEntries>
@@ -98,14 +134,26 @@
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-20</checkoutDate>
                 <copy>
-                    <copyID>cdb1d3c9-b094-40e0-8a4c-273aedb7ae47</copyID>
+                    <copyID>fabc0821-a7d3-46f0-9bfa-fef8c3c6821d</copyID>
+                    <publication>
+                        <dateDue>2015-07-10</dateDue>
+                        <maxCheckoutLength>3</maxCheckoutLength>
+                        <publicationID>bf62a047-4c7b-4657-9554-3a864d8d4601</publicationID>
+                        <title>Journal of Skydiving</title>
+                    </publication>
                 </copy>
                 <dueDate>2015-06-27</dueDate>
             </checkoutRecordEntries>
             <checkoutRecordEntries>
                 <checkoutDate>2015-06-22</checkoutDate>
                 <copy>
-                    <copyID>4ea7d08b-6500-42ed-bbd1-d58268bdcd7e</copyID>
+                    <copyID>b9b2f060-37ba-4738-9273-258827586f51</copyID>
+                    <publication>
+                        <dateDue>2015-07-10</dateDue>
+                        <maxCheckoutLength>3</maxCheckoutLength>
+                        <publicationID>171fb546-1e24-40dd-9e7f-a700cbd0d469</publicationID>
+                        <title>Journal of Symbolic Logic</title>
+                    </publication>
                 </copy>
                 <dueDate>2015-06-25</dueDate>
             </checkoutRecordEntries>

@@ -27,7 +27,7 @@ public class Author extends Person {
 
 	@Override
 	public String toString() {
-		return "Author [credential=" + credential + ", getAddress()=" + getAddress() + ", firstNameProperty()="
+		return "\n\t\t\tAuthor [credential=" + credential + ", getAddress()=" + getAddress() + ", firstNameProperty()="
 				+ firstNameProperty() + ", lastNameProperty()=" + lastNameProperty() + ", getFirstName()="
 				+ getFirstName() + ", getLastName()=" + getLastName() + ", getPhone()=" + getPhone() + "]";
 	}
