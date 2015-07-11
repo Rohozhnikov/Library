@@ -23,7 +23,7 @@ import model.Periodical;
 import model.Publication;
 import project.dataaccess.DataAccessFacade;
 
-public class PublicationController {
+public class CheckoutController {
 	@FXML
 	private TableView<Book> bookTable;
 	@FXML
@@ -69,13 +69,18 @@ public class PublicationController {
 	@FXML
 	private Label outputAnswLabel;
 
-	ObservableList<LibraryMember> libraryMembers;
-	ObservableList<Book> books;
-	ObservableList<Periodical> periodicals;
+	private ObservableList<LibraryMember> libraryMembers;
+	private ObservableList<Book> books;
+	private ObservableList<Periodical> periodicals;
 
 	private App app;
+	private Stage primaryStage;
 
-	public PublicationController() {
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+	}
+
+	public CheckoutController() {
 	}
 
 	public void setApp(App app) {

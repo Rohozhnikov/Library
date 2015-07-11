@@ -3,7 +3,6 @@ package view;
 import java.io.IOException;
 import java.util.Optional;
 
-import controller.App;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,8 +19,8 @@ import javafx.stage.Stage;
 import model.Book;
 import model.LibraryMember;
 import model.Periodical;
-import model.Publication;
 import project.dataaccess.DataAccessFacade;
+import controller.App;
 
 public class PublicationsController {
 	@FXML
@@ -71,14 +70,13 @@ public class PublicationsController {
 
 	ObservableList<Book> books;
 	ObservableList<Periodical> periodicals;
+	private Stage primaryStage;
 
-	private App app;
-
-	public PublicationsController() {
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 	}
 
-	public void setApp(App app) {
-		this.app = app;
+	public PublicationsController() {
 	}
 
 	@FXML
@@ -89,44 +87,66 @@ public class PublicationsController {
 		bookTable.setItems(books);
 		periodicalTable.setItems(periodicals);
 
-		ISBNColumn.setCellValueFactory(cellData -> cellData.getValue().ISBNProperty());
-		MaxCheckoutColumn.setCellValueFactory(cellData -> cellData.getValue().maxCheckoutLengthProperty());
-		titleColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
-		AvailableColumn.setCellValueFactory(cellData -> cellData.getValue().availableProperty());
-		AuthorsColumn.setCellValueFactory(cellData -> cellData.getValue().authorsProperty());
+		ISBNColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.ISBNProperty());
+		MaxCheckoutColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.maxCheckoutLengthProperty());
+		titleColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.titleProperty());
+		AvailableColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.availableProperty());
+		AuthorsColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.authorsProperty());
 
-		IssueNoPeriodicalColumn.setCellValueFactory(cellData -> cellData.getValue().issueNo());
-		titlePeriodicalColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
-		maxCheckoutPeriodicalColumn.setCellValueFactory(cellData -> cellData.getValue().maxCheckoutLengthProperty());
+		IssueNoPeriodicalColumn.setCellValueFactory(cellData -> cellData
+				.getValue().issueNo());
+		titlePeriodicalColumn.setCellValueFactory(cellData -> cellData
+				.getValue().titleProperty());
+		maxCheckoutPeriodicalColumn.setCellValueFactory(cellData -> cellData
+				.getValue().maxCheckoutLengthProperty());
 
-		bookTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValuue) -> showBookDetails(newValuue, null));
-		periodicalTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValuue) -> showPeriodicalDetails(newValuue, null));
+		bookTable
+				.getSelectionModel()
+				.selectedItemProperty()
+				.addListener(
+						(observable, oldValue, newValuue) -> showBookDetails(
+								newValuue, null));
+		periodicalTable
+				.getSelectionModel()
+				.selectedItemProperty()
+				.addListener(
+						(observable, oldValue, newValuue) -> showPeriodicalDetails(
+								newValuue, null));
 
 	}
 
 	private Book getBookByISBN() {
-		Optional<Book> enteredBookISBN = books.stream().filter(bk -> bk.getISBN().equals(ISBNTextField.getText()))
+		Optional<Book> enteredBookISBN = books.stream()
+				.filter(bk -> bk.getISBN().equals(ISBNTextField.getText()))
 				.findAny();
 		return enteredBookISBN.get();
 	}
 
 	private Periodical getPeriodicalByTitle() {
-		Optional<Periodical> enteredPeriodicalInfo = periodicals.stream()
-				.filter(periodic -> periodic.getTitle().equals(titleTextField.getText()))
-				.filter(periodic -> periodic.getIssueNO() == Integer.valueOf(issueNumberTextField.getText())).findAny();
+		Optional<Periodical> enteredPeriodicalInfo = periodicals
+				.stream()
+				.filter(periodic -> periodic.getTitle().equals(
+						titleTextField.getText()))
+				.filter(periodic -> periodic.getIssueNO() == Integer
+						.valueOf(issueNumberTextField.getText())).findAny();
 		return enteredPeriodicalInfo.get();
 	}
 
 	@FXML
 	private void searchChekoutBook() {
 		try {
-			if (!ISBNTextField.getText().isEmpty() && titleTextField.getText().isEmpty()
+			if (!ISBNTextField.getText().isEmpty()
+					&& titleTextField.getText().isEmpty()
 					&& issueNumberTextField.getText().isEmpty()) {
 				showBookDetails(getBookByISBN(), null);
 
-			} else if (!titleTextField.getText().isEmpty() && !issueNumberTextField.getText().isEmpty()
+			} else if (!titleTextField.getText().isEmpty()
+					&& !issueNumberTextField.getText().isEmpty()
 					&& ISBNTextField.getText().isEmpty()) {
 				showPeriodicalDetails(getPeriodicalByTitle(), null);
 			}
@@ -163,10 +183,12 @@ public class PublicationsController {
 		}
 	}
 
-	private void showPeriodicalDetails(Periodical periodical, LibraryMember member) {
+	private void showPeriodicalDetails(Periodical periodical,
+			LibraryMember member) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(App.class.getResource("/view/PeriodicalCheckout.fxml"));
+			loader.setLocation(App.class
+					.getResource("/view/PeriodicalCheckout.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			Stage dialogStage = new Stage();

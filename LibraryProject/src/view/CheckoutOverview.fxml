@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.PublicationController">
+<AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.CheckoutController">
   <!-- TODO Add Nodes -->
   <children>
     <AnchorPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -31,8 +31,6 @@
                     <Separator layoutX="143.0" layoutY="96.0" orientation="VERTICAL" prefHeight="298.0" />
                     <Label layoutX="15.0" layoutY="97.0" styleClass="column-header, label-bright" text="Book:" />
                     <Label layoutX="158.0" layoutY="95.0" text="Periodical:" />
-                    <Button layoutX="12.0" layoutY="365.0" mnemonicParsing="false" text="ADD Book" />
-                    <Button layoutX="185.0" layoutY="365.0" mnemonicParsing="false" text="ADDPublication" />
                   </children>
                 </Pane>
               </children>

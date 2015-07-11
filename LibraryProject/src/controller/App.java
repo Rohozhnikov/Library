@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.prefs.Preferences;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -14,29 +12,19 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
-import model.LibraryMember;
 import model.LibraryMemberWrapper;
-import project.dataaccess.DataAccessFacade;
-import view.LibraryMemberEditController;
-import view.LibraryMemberOverwievController;
 import view.MenuLayoutController;
+import view.WelcomePageController;
 
 public class App extends Application {
+
 	private Stage primaryStage;
-
-	public void setPrimaryStage(Stage primaryStage) {
-		this.primaryStage = null;
-	}
-
 	private BorderPane rootLayout;
-	private ObservableList<LibraryMember> memberData = FXCollections
-			.observableArrayList();
 
 	public App() {
 	}
@@ -49,76 +37,62 @@ public class App extends Application {
 				new Image("file:resources/images/Closed_Note.png"));
 
 		initRootLayout();
-		showLibraryMemberOverwiev();
-
+		showWelcomePage();
 	}
 
 	public void initRootLayout() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(App.class.getResource("/view/Menu.fxml"));
+			loader.setLocation(MenuLayoutController.class
+					.getResource("/view/Menu.fxml"));
 			rootLayout = loader.load();
 
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 
 			MenuLayoutController controller = loader.getController();
-			controller.setMainApp(this);
-
+//			controller.setPrimaryStage(primaryStage);
+//			MenuLayoutController.primaryStage = stage;
 			primaryStage.show();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		memberData = DataAccessFacade.readMemberMap();
-
 	}
 
-	public void showLibraryMemberOverwiev() {
+	public void showWelcomePage() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(App.class
-					.getResource("/view/LibraryMemberOverview.fxml"));
-			AnchorPane LibraryMemberOverwiew = loader.load();
+			loader.setLocation(App.class.getResource("/view/WelcomePage.fxml"));
+			AnchorPane WelcomePage = loader.load();
 
-			rootLayout.setCenter(LibraryMemberOverwiew);
+			rootLayout.setCenter(WelcomePage);
 
-			LibraryMemberOverwievController controller = loader.getController();
-			controller.setApp(this);
+			WelcomePageController controller = loader.getController();
+			controller.setMainApp(this);
+			controller.setPrimaryStage(primaryStage);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public boolean showMemberEditDialog(LibraryMember member) {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(App.class
-					.getResource("/view/AuthorEditDialog.fxml"));
-			AnchorPane page = (AnchorPane) loader.load();
+	// public void showLibraryMemberOverwiev() {
+	// try {
+	// FXMLLoader loader = new FXMLLoader();
+	// loader.setLocation(App.class
+	// .getResource("/view/LibraryMemberOverview.fxml"));
+	// AnchorPane LibraryMemberOverwiew = loader.load();
+	//
+	// rootLayout.setCenter(LibraryMemberOverwiew);
+	//
+	// LibraryMemberOverwievController controller = loader.getController();
+	// controller.setApp(this);
+	// } catch (IOException e) {
+	// e.printStackTrace();
+	// }
+	// }
 
-			// Create the dialog Stage.
-			Stage dialogStage = new Stage();
-			dialogStage.setTitle("Edit Author");
-			dialogStage.initModality(Modality.WINDOW_MODAL);
-			dialogStage.initOwner(primaryStage);
-			Scene scene = new Scene(page);
-			dialogStage.setScene(scene);
-
-			// Set the person into the controller.
-			LibraryMemberEditController controller = loader.getController();
-			controller.setDialogStage(dialogStage);
-			controller.setMember(member);
-
-			// Show the dialog and wait until the user closes it
-			dialogStage.showAndWait();
-
-			return controller.getOkCliced();
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
+	
 
 	public File getPersonFilePath() {
 		Preferences prefs = Preferences.userNodeForPackage(App.class);
@@ -182,7 +156,7 @@ public class App extends Application {
 
 			// Wrapping our person data.
 			LibraryMemberWrapper wrapper = new LibraryMemberWrapper();
-			wrapper.setLibraryMembers(memberData);
+			// wrapper.setLibraryMembers(memberData);
 
 			// Marshalling and saving XML to the file.
 			m.marshal(wrapper, file);
@@ -204,13 +178,6 @@ public class App extends Application {
 		launch(args);
 	}
 
-	public Stage getPrimaryStage() {
-		return primaryStage;
-	}
-
-	public ObservableList<LibraryMember> getMemberData() {
-		return memberData;
-	}
 	// public boolean showPersonEditDialog(Author person) {
 	// try {
 	// // Load the fxml file and create a new stage for the popup dialog.

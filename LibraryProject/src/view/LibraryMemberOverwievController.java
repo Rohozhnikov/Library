@@ -1,17 +1,24 @@
 package view;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
+import project.dataaccess.DataAccessFacade;
 import controller.App;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.CheckoutRecordEntry;
 import model.LibraryMember;
 
@@ -55,25 +62,33 @@ public class LibraryMemberOverwievController {
 	@FXML
 	private Label phoneLabel;
 
-	private App app;
+	private ObservableList<LibraryMember> libraryMembers = DataAccessFacade
+			.readMemberMap();
+	private Stage primaryStage;
+
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+	}
 
 	public LibraryMemberOverwievController() {
 	}
 
 	@FXML
 	private void initialize() {
-		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
-		FirstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
-		memberIDColumn.setCellValueFactory(cellData -> cellData.getValue().memberIDProperty());
+		memberTable.setItems(libraryMembers);
+		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.lastNameProperty());
+		FirstNameColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.firstNameProperty());
+		memberIDColumn.setCellValueFactory(cellData -> cellData.getValue()
+				.memberIDProperty());
 		showPersonDetails(null);
 
-		memberTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
-	}
-
-	public void setApp(App app) {
-		this.app = app;
-		memberTable.setItems(app.getMemberData());
+		memberTable
+				.getSelectionModel()
+				.selectedItemProperty()
+				.addListener(
+						(observable, oldValue, newValue) -> showPersonDetails(newValue));
 	}
 
 	private void showPersonDetails(LibraryMember member) {
@@ -87,11 +102,14 @@ public class LibraryMemberOverwievController {
 			phoneLabel.setText(member.getPhone());
 			memberIDLabel.setText(String.valueOf(member.getMemberID()));
 
-			checkoutRecordTable
-					.setItems(FXCollections.observableList(member.getCheckoutRecord().getCheckoutRecordEntries()));
-			copyColumn.setCellValueFactory(cellData -> cellData.getValue().getCopy().getPublication().titleProperty());
-			CheckoutDateColumn.setCellValueFactory(cellData -> cellData.getValue().checkoutDate());
-			DueDateColumn.setCellValueFactory(cellData -> cellData.getValue().dueDate());
+			checkoutRecordTable.setItems(FXCollections.observableList(member
+					.getCheckoutRecord().getCheckoutRecordEntries()));
+			copyColumn.setCellValueFactory(cellData -> cellData.getValue()
+					.getCopy().getPublication().titleProperty());
+			CheckoutDateColumn.setCellValueFactory(cellData -> cellData
+					.getValue().checkoutDate());
+			DueDateColumn.setCellValueFactory(cellData -> cellData.getValue()
+					.dueDate());
 		} else {
 			checkoutRecordTable.setItems(null);
 
@@ -115,9 +133,9 @@ public class LibraryMemberOverwievController {
 	@FXML
 	private void handleNewMember() {
 		LibraryMember tempMember = new LibraryMember();
-		boolean okClicked = app.showMemberEditDialog(tempMember);
+		boolean okClicked = showMemberEditDialog(tempMember);
 		if (okClicked) {
-			app.getMemberData().add(tempMember);
+			libraryMembers.add(tempMember);
 		}
 	}
 
@@ -127,9 +145,10 @@ public class LibraryMemberOverwievController {
 	 */
 	@FXML
 	private void handleEditMember() {
-		LibraryMember selectedPerson = memberTable.getSelectionModel().getSelectedItem();
+		LibraryMember selectedPerson = memberTable.getSelectionModel()
+				.getSelectedItem();
 		if (selectedPerson != null) {
-			boolean okClicked = app.showMemberEditDialog(selectedPerson);
+			boolean okClicked = showMemberEditDialog(selectedPerson);
 			if (okClicked) {
 				showPersonDetails(selectedPerson);
 			}
@@ -137,7 +156,7 @@ public class LibraryMemberOverwievController {
 		} else {
 			// Nothing selected.
 			Alert alert = new Alert(AlertType.WARNING);
-			alert.initOwner(app.getPrimaryStage());
+			// alert.initOwner(prim);
 			alert.setTitle("No Selection");
 			alert.setHeaderText("No Person Selected");
 			alert.setContentText("Please select a person in the table.");
@@ -150,23 +169,57 @@ public class LibraryMemberOverwievController {
 	private void searchByID() {
 		if (memberIDSearchTextField.getText().isEmpty()) {
 
-			memberTable.getSelectionModel().selectedItemProperty()
-					.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
+			memberTable
+					.getSelectionModel()
+					.selectedItemProperty()
+					.addListener(
+							(observable, oldValue, newValue) -> showPersonDetails(newValue));
 		} else {
 			String id = memberIDSearchTextField.getText();
 			memberIDSearchTextField.setText("");
-			ObservableList<LibraryMember> libraryMembers = app.getMemberData();
 			for (LibraryMember libraryMember : libraryMembers) {
 				if (id.equals(libraryMember.getMemberID())) {
-					if (app.showMemberEditDialog(libraryMember)) {
+					if (showMemberEditDialog(libraryMember)) {
 						showPersonDetails(libraryMember);
 					}
 				}
 			}
 		}
 
-		memberTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
+		memberTable
+				.getSelectionModel()
+				.selectedItemProperty()
+				.addListener(
+						(observable, oldValue, newValue) -> showPersonDetails(newValue));
 	}
 
+	public boolean showMemberEditDialog(LibraryMember member) {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(App.class
+					.getResource("/view/AuthorEditDialog.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Edit Author");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			// dialogStage.initOwner(primaryStage);
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the person into the controller.
+			LibraryMemberEditController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+			controller.setMember(member);
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+
+			return controller.getOkCliced();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 }

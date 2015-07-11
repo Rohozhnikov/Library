@@ -5,59 +5,47 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import controller.App;
 
-public class MenuLayoutController {
+public class WelcomePageController {
 
+	private App mainApp;
 	private BorderPane rootLayout;
-	private static Stage primaryStage;
+	private Stage primaryStage;
 
-	public void setRootLayout(BorderPane rootLayout) {
-		this.rootLayout = rootLayout;
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 	}
 
-//	public void setPrimaryStage(Stage primaryStage) {
-//		this.primaryStage = primaryStage;
-//	}
-
-	@FXML
-	private void handleAbout() {
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("AddressApp");
-		alert.setHeaderText("About");
-		alert.setContentText("Author: Eugene");
-
-		alert.showAndWait();
+	public void setMainApp(App mainApp) {
+		this.mainApp = mainApp;
 	}
 
 	@FXML
 	private void handleCheckout() {
 		try {
 			FXMLLoader loaderMenu = new FXMLLoader();
-			loaderMenu.setLocation(MenuLayoutController.class
-					.getResource("/view/Menu.fxml"));
+			loaderMenu.setLocation(App.class.getResource("/view/Menu.fxml"));
 			rootLayout = loaderMenu.load();
 
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuLayoutController.class
+			loader.setLocation(CheckoutController.class
 					.getResource("/view/CheckoutOverview.fxml"));
 			AnchorPane layout = loader.load();
 
-			rootLayout.setCenter(layout);
-
 			Stage stage = new Stage();
 			stage.setTitle("Checkout");
-			stage.initModality(Modality.WINDOW_MODAL);
+			stage.initModality(Modality.APPLICATION_MODAL);
 			Scene scene = new Scene(rootLayout);
 			stage.setScene(scene);
+			rootLayout.setCenter(layout);
 
 			CheckoutController controller = loader.getController();
+			controller.setApp(mainApp);
 			controller.setPrimaryStage(stage);
 
 			stage.show();
@@ -75,7 +63,7 @@ public class MenuLayoutController {
 			rootLayout = loaderMenu.load();
 
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuLayoutController.class
+			loader.setLocation(LibraryMemberOverwievController.class
 					.getResource("/view/LibraryMemberOverview.fxml"));
 			AnchorPane layout = loader.load();
 			rootLayout.setCenter(layout);
@@ -101,8 +89,7 @@ public class MenuLayoutController {
 	private void Publications() {
 		try {
 			FXMLLoader loaderMenu = new FXMLLoader();
-			loaderMenu.setLocation(MenuLayoutController.class
-					.getResource("/view/Menu.fxml"));
+			loaderMenu.setLocation(MenuLayoutController.class.getResource("/view/Menu.fxml"));
 			rootLayout = loaderMenu.load();
 
 			FXMLLoader loader = new FXMLLoader();
