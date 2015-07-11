@@ -59,7 +59,7 @@ public class MenuLayoutController {
 
 			CheckoutController controller = loader.getController();
 			controller.setPrimaryStage(stage);
-
+			
 			stage.show();
 			primaryStage.hide();
 		} catch (IOException e) {
