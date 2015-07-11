@@ -22,7 +22,7 @@ public class CheckoutRecord {
 
 	@Override
 	public String toString() {
-		return "CheckoutRecord [checkoutRecordEntries=" + checkoutRecordEntries + ", libraryMember=" + "]";
+		return "\n\tCheckoutRecord [checkoutRecordEntries=" + checkoutRecordEntries + ", libraryMember=" + "]";
 	}
 
 }

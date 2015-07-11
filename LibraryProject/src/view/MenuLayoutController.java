@@ -16,7 +16,7 @@ import controller.App;
 public class MenuLayoutController {
 
 	private BorderPane rootLayout;
-	private static Stage primaryStage;
+	public static Stage primaryStage;
 
 	public void setRootLayout(BorderPane rootLayout) {
 		this.rootLayout = rootLayout;
@@ -60,8 +60,11 @@ public class MenuLayoutController {
 			CheckoutController controller = loader.getController();
 			controller.setPrimaryStage(stage);
 			
+			if (primaryStage!=null) {
+				primaryStage.hide();
+			}
+			primaryStage = stage;
 			stage.show();
-			primaryStage.hide();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -91,7 +94,8 @@ public class MenuLayoutController {
 			controoller.setPrimaryStage(stage);
 
 			stage.show();
-			primaryStage.hide();
+			primaryStage.close();
+			primaryStage = stage;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -123,7 +127,8 @@ public class MenuLayoutController {
 			controller.setPrimaryStage(stage);
 
 			stage.show();
-			primaryStage.hide();
+			primaryStage.close();
+			primaryStage = stage;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

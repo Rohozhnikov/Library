@@ -62,9 +62,9 @@ public class LibraryMemberOverwievController {
 	@FXML
 	private Label phoneLabel;
 
-	private ObservableList<LibraryMember> libraryMembers = DataAccessFacade
-			.readMemberMap();
+	private ObservableList<LibraryMember> libraryMembers = DataAccessFacade.readMemberMap();
 	private Stage primaryStage;
+	private LibraryMember libraryMember;
 
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
@@ -76,23 +76,18 @@ public class LibraryMemberOverwievController {
 	@FXML
 	private void initialize() {
 		memberTable.setItems(libraryMembers);
-		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue()
-				.lastNameProperty());
-		FirstNameColumn.setCellValueFactory(cellData -> cellData.getValue()
-				.firstNameProperty());
-		memberIDColumn.setCellValueFactory(cellData -> cellData.getValue()
-				.memberIDProperty());
+		lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+		FirstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+		memberIDColumn.setCellValueFactory(cellData -> cellData.getValue().memberIDProperty());
 		showPersonDetails(null);
 
-		memberTable
-				.getSelectionModel()
-				.selectedItemProperty()
-				.addListener(
-						(observable, oldValue, newValue) -> showPersonDetails(newValue));
+		memberTable.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
 	}
 
 	private void showPersonDetails(LibraryMember member) {
 		if (member != null) {
+			this.libraryMember = member;
 			firstNameLabel.setText(member.getFirstName());
 			lastNameLabel.setText(member.getLastName());
 			streetLabel.setText(member.getAddress().getStreet());
@@ -102,14 +97,11 @@ public class LibraryMemberOverwievController {
 			phoneLabel.setText(member.getPhone());
 			memberIDLabel.setText(String.valueOf(member.getMemberID()));
 
-			checkoutRecordTable.setItems(FXCollections.observableList(member
-					.getCheckoutRecord().getCheckoutRecordEntries()));
-			copyColumn.setCellValueFactory(cellData -> cellData.getValue()
-					.getCopy().getPublication().titleProperty());
-			CheckoutDateColumn.setCellValueFactory(cellData -> cellData
-					.getValue().checkoutDate());
-			DueDateColumn.setCellValueFactory(cellData -> cellData.getValue()
-					.dueDate());
+			checkoutRecordTable
+					.setItems(FXCollections.observableList(member.getCheckoutRecord().getCheckoutRecordEntries()));
+			copyColumn.setCellValueFactory(cellData -> cellData.getValue().getCopy().getPublication().titleProperty());
+			CheckoutDateColumn.setCellValueFactory(cellData -> cellData.getValue().checkoutDate());
+			DueDateColumn.setCellValueFactory(cellData -> cellData.getValue().dueDate());
 		} else {
 			checkoutRecordTable.setItems(null);
 
@@ -139,14 +131,9 @@ public class LibraryMemberOverwievController {
 		}
 	}
 
-	/**
-	 * Called when the user clicks the edit button. Opens a dialog to edit
-	 * details for the selected person.
-	 */
 	@FXML
 	private void handleEditMember() {
-		LibraryMember selectedPerson = memberTable.getSelectionModel()
-				.getSelectedItem();
+		LibraryMember selectedPerson = memberTable.getSelectionModel().getSelectedItem();
 		if (selectedPerson != null) {
 			boolean okClicked = showMemberEditDialog(selectedPerson);
 			if (okClicked) {
@@ -154,7 +141,6 @@ public class LibraryMemberOverwievController {
 			}
 
 		} else {
-			// Nothing selected.
 			Alert alert = new Alert(AlertType.WARNING);
 			// alert.initOwner(prim);
 			alert.setTitle("No Selection");
@@ -169,11 +155,8 @@ public class LibraryMemberOverwievController {
 	private void searchByID() {
 		if (memberIDSearchTextField.getText().isEmpty()) {
 
-			memberTable
-					.getSelectionModel()
-					.selectedItemProperty()
-					.addListener(
-							(observable, oldValue, newValue) -> showPersonDetails(newValue));
+			memberTable.getSelectionModel().selectedItemProperty()
+					.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
 		} else {
 			String id = memberIDSearchTextField.getText();
 			memberIDSearchTextField.setText("");
@@ -186,18 +169,14 @@ public class LibraryMemberOverwievController {
 			}
 		}
 
-		memberTable
-				.getSelectionModel()
-				.selectedItemProperty()
-				.addListener(
-						(observable, oldValue, newValue) -> showPersonDetails(newValue));
+		memberTable.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
 	}
 
 	public boolean showMemberEditDialog(LibraryMember member) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(App.class
-					.getResource("/view/AuthorEditDialog.fxml"));
+			loader.setLocation(App.class.getResource("/view/AuthorEditDialog.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			// Create the dialog Stage.
@@ -220,6 +199,13 @@ public class LibraryMemberOverwievController {
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
+		}
+	}
+
+	@FXML
+	private void printToConsoleRecord() {
+		if (libraryMember != null) {
+			System.out.println(libraryMember);
 		}
 	}
 }

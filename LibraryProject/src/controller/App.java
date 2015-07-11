@@ -33,8 +33,7 @@ public class App extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("LIBRARY");
-		this.primaryStage.getIcons().add(
-				new Image("file:resources/images/Closed_Note.png"));
+		this.primaryStage.getIcons().add(new Image("file:resources/images/Closed_Note.png"));
 
 		initRootLayout();
 		showWelcomePage();
@@ -43,18 +42,13 @@ public class App extends Application {
 	public void initRootLayout() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MenuLayoutController.class
-					.getResource("/view/Menu.fxml"));
+			loader.setLocation(MenuLayoutController.class.getResource("/view/Menu.fxml"));
 			rootLayout = loader.load();
 
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
-
-			MenuLayoutController controller = loader.getController();
-//			controller.setPrimaryStage(primaryStage);
-//			MenuLayoutController.primaryStage = stage;
+			MenuLayoutController.primaryStage = primaryStage;
 			primaryStage.show();
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -69,7 +63,6 @@ public class App extends Application {
 			rootLayout.setCenter(WelcomePage);
 
 			WelcomePageController controller = loader.getController();
-			controller.setMainApp(this);
 			controller.setPrimaryStage(primaryStage);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -91,8 +84,6 @@ public class App extends Application {
 	// e.printStackTrace();
 	// }
 	// }
-
-	
 
 	public File getPersonFilePath() {
 		Preferences prefs = Preferences.userNodeForPackage(App.class);
@@ -149,8 +140,7 @@ public class App extends Application {
 	public void savePersonDataToFile(File file) {
 		try {
 			System.out.println("file = " + file);
-			JAXBContext context = JAXBContext
-					.newInstance(LibraryMemberWrapper.class);
+			JAXBContext context = JAXBContext.newInstance(LibraryMemberWrapper.class);
 			Marshaller m = context.createMarshaller();
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
@@ -167,8 +157,7 @@ public class App extends Application {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");
 			alert.setHeaderText("Could not save data");
-			alert.setContentText("Could not save data to file:\n"
-					+ file.getPath());
+			alert.setContentText("Could not save data to file:\n" + file.getPath());
 
 			alert.showAndWait();
 		}

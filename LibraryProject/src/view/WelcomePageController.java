@@ -13,16 +13,11 @@ import controller.App;
 
 public class WelcomePageController {
 
-	private App mainApp;
 	private BorderPane rootLayout;
 	private Stage primaryStage;
 
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-	}
-
-	public void setMainApp(App mainApp) {
-		this.mainApp = mainApp;
 	}
 
 	@FXML
@@ -45,11 +40,11 @@ public class WelcomePageController {
 			rootLayout.setCenter(layout);
 
 			CheckoutController controller = loader.getController();
-			controller.setApp(mainApp);
 			controller.setPrimaryStage(stage);
-
 			stage.show();
 			primaryStage.hide();
+			MenuLayoutController.primaryStage = stage;
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -80,6 +75,7 @@ public class WelcomePageController {
 
 			stage.show();
 			primaryStage.hide();
+			MenuLayoutController.primaryStage = stage;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -111,6 +107,7 @@ public class WelcomePageController {
 
 			stage.show();
 			primaryStage.hide();
+			MenuLayoutController.primaryStage = stage;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

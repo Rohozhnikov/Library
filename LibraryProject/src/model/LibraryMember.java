@@ -50,10 +50,9 @@ public class LibraryMember extends Person {
 
 	@Override
 	public String toString() {
-		return "LibraryMember [memberID=" + memberID + ", checkoutRecord=" + record + ", getAddress()=" + getAddress()
-				+ ", firstNameProperty()=" + firstNameProperty() + ", lastNameProperty()=" + lastNameProperty()
-				+ ", getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName() + ", getPhone()="
-				+ getPhone() + "]";
+		return "\nLibraryMember [memberID=" + memberID + ", getFirstName()=" + getFirstName() + ", getLastName()="
+				+ getLastName() + ", getPhone()=" + getPhone() + ", getAddress()=" + getAddress() + ", checkoutRecord="
+				+ record + "]";
 	}
 
 }
