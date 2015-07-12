@@ -4,13 +4,12 @@ import java.time.LocalDate;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.Book;
 import model.CheckoutRecordEntry;
 import model.LibraryMember;
-import util.DateUtil;
 
 public class BookCheckoutController {
 
@@ -50,8 +49,6 @@ public class BookCheckoutController {
 		ISBNLabel.setText(book.getISBN());
 		MaxCheckoutLabel.setText(String.valueOf(book.getMaxCheckoutLength()));
 		availableLabel.setText(String.valueOf(book.getAvailable()));
-		LocalDate n = LocalDate.of(2015, 6, 20);
-//		dateDueLabel.setText("sdflsk");
 		authorsLabel.setText(book.authorsInLine());
 		numCopiesLabel.setText(""+book.getCopy().size());
 	}
@@ -74,10 +71,6 @@ public class BookCheckoutController {
 	@FXML
 	private void handleCancel() {
 		dialogStage.close();
-	}
-	@FXML
-	private void addCopy() {
-		book.addCopy();
 	}
 
 }

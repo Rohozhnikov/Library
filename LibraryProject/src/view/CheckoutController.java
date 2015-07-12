@@ -3,7 +3,6 @@ package view;
 import java.io.IOException;
 import java.util.Optional;
 
-import controller.App;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,8 +19,8 @@ import javafx.stage.Stage;
 import model.Book;
 import model.LibraryMember;
 import model.Periodical;
-import model.Publication;
 import project.dataaccess.DataAccessFacade;
+import controller.App;
 
 public class CheckoutController {
 	@FXML
@@ -73,18 +72,7 @@ public class CheckoutController {
 	private ObservableList<Book> books;
 	private ObservableList<Periodical> periodicals;
 
-	private App app;
-	private Stage primaryStage;
-
-	public void setPrimaryStage(Stage primaryStage) {
-		this.primaryStage = primaryStage;
-	}
-
 	public CheckoutController() {
-	}
-
-	public void setApp(App app) {
-		this.app = app;
 	}
 
 	@FXML
@@ -94,20 +82,20 @@ public class CheckoutController {
 		periodicals = DataAccessFacade.readPeriodicals();
 
 		bookTable.setItems(books);
-		periodicalTable.setItems(periodicals);
 
 		ISBNColumn.setCellValueFactory(cellData -> cellData.getValue().ISBNProperty());
 		MaxCheckoutColumn.setCellValueFactory(cellData -> cellData.getValue().maxCheckoutLengthProperty());
 		titleColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
 		AvailableColumn.setCellValueFactory(cellData -> cellData.getValue().availableProperty());
 		AuthorsColumn.setCellValueFactory(cellData -> cellData.getValue().authorsProperty());
+		bookTable.getSelectionModel().selectedItemProperty()
+		.addListener((observable, oldValue, newValuue) -> showBookDetails(newValuue, null));
 
+		periodicalTable.setItems(periodicals);
 		IssueNoPeriodicalColumn.setCellValueFactory(cellData -> cellData.getValue().issueNo());
 		titlePeriodicalColumn.setCellValueFactory(cellData -> cellData.getValue().titleProperty());
 		maxCheckoutPeriodicalColumn.setCellValueFactory(cellData -> cellData.getValue().maxCheckoutLengthProperty());
 
-		bookTable.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldValue, newValuue) -> showBookDetails(newValuue, null));
 		periodicalTable.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValuue) -> showPeriodicalDetails(newValuue, null));
 

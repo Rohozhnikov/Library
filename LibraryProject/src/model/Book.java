@@ -68,7 +68,7 @@ public class Book extends Publication {
 	}
 
 	public boolean isAvailable() {
-		if (getCopy() != null) {
+		if (getCopy() == null||nextAvailableCopy() == null||getCopy().size()==0) {
 			available.set(false);
 			return false;
 		}

@@ -63,12 +63,7 @@ public class LibraryMemberOverwievController {
 	private Label phoneLabel;
 
 	private ObservableList<LibraryMember> libraryMembers = DataAccessFacade.readMemberMap();
-	private Stage primaryStage;
 	private LibraryMember libraryMember;
-
-	public void setPrimaryStage(Stage primaryStage) {
-		this.primaryStage = primaryStage;
-	}
 
 	public LibraryMemberOverwievController() {
 	}

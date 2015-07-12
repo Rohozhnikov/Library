@@ -13,7 +13,7 @@
       <menus>
         <Menu mnemonicParsing="false" text="Control panel">
           <items>
-            <MenuItem mnemonicParsing="false" text="Welcome page" />
+            <MenuItem mnemonicParsing="false" onAction="#handlewelcomePage" text="Welcome page" />
             <MenuItem mnemonicParsing="false" onAction="#handleLibraryMembers" text="Members" />
             <MenuItem mnemonicParsing="false" onAction="#handleCheckout" text="Checkout" />
             <MenuItem mnemonicParsing="false" onAction="#Publications" text="Publications" />

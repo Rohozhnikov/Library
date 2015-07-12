@@ -20,7 +20,7 @@ public class Publication {
 
 	private StringProperty publicationID;
 	private StringProperty title;
-	private List<Copy> copy;
+	private List<Copy> copies;
 	private IntegerProperty maxCheckoutLength;
 	private ObjectProperty<LocalDate> dateDue;
 
@@ -32,8 +32,9 @@ public class Publication {
 		super();
 		this.title = new SimpleStringProperty(title);
 		this.maxCheckoutLength = new SimpleIntegerProperty(maxCheckoutLength);
-		copy = new ArrayList<Copy>();
-		publicationID = new SimpleStringProperty(String.valueOf(UUID.randomUUID()));
+		copies = new ArrayList<Copy>();
+		publicationID = new SimpleStringProperty(String.valueOf(UUID
+				.randomUUID()));
 		dateDue = new SimpleObjectProperty<LocalDate>(LocalDate.now());
 	}
 
@@ -63,29 +64,37 @@ public class Publication {
 
 	@XmlTransient
 	public List<Copy> getCopy() {
-		return copy;
+		return copies;
 	}
 
 	public void setCopy(List<Copy> copy) {
-		this.copy = copy;
+		this.copies = copy;
 	}
 
 	public void addCopy() {
-		copy.add(new Copy(this));
+		copies.add(new Copy(this));
 	}
 
 	public Copy nextAvailableCopy() {
-		Copy c = new Copy(this);
-		if (copy == null) {
+
+		if (copies == null || copies.size() == 0) {
 			return null;
-		} else if (copy.size() == 0) {
-			c = copy.get(0);
-			copy = null;
-		} else if (copy.size() > 1) {
-			copy.remove(copy);
-			c = copy.get(0);
 		}
-		return c;
+		Copy copy = copies.get(0);
+		copies.remove(copies.get(0));
+		return copy;
+
+		// Copy c = new Copy(this);
+		// if (copies == null) {
+		// return null;
+		// } else if (copies.size() == 0) {
+		// c = copies.get(0);
+		// copies = null;
+		// } else if (copies.size() > 1) {
+		// copies.remove(copies);
+		// c = copies.get(0);
+		// }
+		// return c;
 	}
 
 	public String getPublicationID() {
@@ -115,8 +124,9 @@ public class Publication {
 
 	@Override
 	public String toString() {
-		return "Publication [publicationID=" + publicationID + ", title=" + title + ", copy=" + copy
-				+ ", maxCheckoutLength=" + maxCheckoutLength + ", dateDue=" + dateDue + "]\n";
+		return "Publication [publicationID=" + publicationID + ", title="
+				+ title + ", copy=" + copies + ", maxCheckoutLength="
+				+ maxCheckoutLength + ", dateDue=" + dateDue + "]\n";
 	}
 
 }
